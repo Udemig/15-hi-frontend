@@ -17,9 +17,24 @@ function App() {
 
   // Çoklu renderlama yöntemini kullanmak için öncelikle bir dizi oluşturuyoruz
   // Bu diziyi map yöntemiyle dönersek dizideki eleman sayısı kadar bileşeni ekrana basarız
-  const ürünler = [1, 1, 1, 1, 1, 1, 1, 1];
+  const ürünler = [
+    {
+      isim: "Nestle Çikolata",
+      fiyat: 250,
+      resim: "https://cdn-image.getir.com/market/product/02c129cc-ac18-490b-882e-a80fa3c47599.png",
+    },
+    {
+      isim: "Ülker Çikolata",
+      fiyat: 750,
+      resim: "https://cdn.getir.com/product/5936674138003900045406d0_tr_1608389364430.jpeg",
+    },
+    {
+      isim: "Eti Canga",
+      fiyat: 50,
+      resim: "https://cdn-image.getir.com/market/product/3663502e-c15d-4ce2-8f14-6d68e1bfcca0.jpg",
+    },
+  ];
 
-  // TODO: PROPSLAR İÇİN ÖRNEĞE DEVAM
   return (
     <div className="App">
       <Header />
@@ -32,13 +47,9 @@ function App() {
         <Button />
 
         <section>
-          <Card isim="Nestle Çikolata" fiyat={250} />
-
-          <Card isim="Ülker Ece Fındıklı" fiyat={750} />
-
-          {/* {ürünler.map((ürün) => (
-            <Card />
-          ))} */}
+          {ürünler.map((ürün) => (
+            <Card isim={ürün.isim} fiyat={ürün.fiyat} resim={ürün.resim} />
+          ))}
         </section>
       </main>
 

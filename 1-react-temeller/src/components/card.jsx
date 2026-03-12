@@ -3,11 +3,13 @@
 function Card(props) {
   return (
     <div className="card">
-      <img src="https://cdn-image.getir.com/market/product/ebd9f958-d1c8-4002-8983-95095480f809.jpg" width={100} />
+      <img src={props.resim} width={100} />
 
       <p>{props.fiyat} TL</p>
 
       <h3>{props.isim}</h3>
+
+      <button>Sepete Ekle</button>
     </div>
   );
 }

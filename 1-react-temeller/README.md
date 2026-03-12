@@ -103,3 +103,24 @@
 - Bir bileşene veri aktarma yönetmidir.
 - Prop olmadığı seneryoda bileşenler dinamik olamayacağından dolayı yeniden kullanılabilir olmaz ve bir bileşen olmasının neredeyse hiç bir artısı kalmaz.
 - Prop yapısı sayesinde bileşenin içeriği dinamik olarak belirleyip, bileşeni yeniden kullanılabilir yapabiliriz.
+
+# React Virtual DOM
+
+- **DOM**: Document Object Model, tarayıcnın HTML sayfasını ağaç yapısı şeklinde temsil etmesidir
+
+- **Virtual DOM**, React'ın kullanıcı arayüzün daha hızlı güncellemesini sağlayan bir tekniktir. React gerçek tarayıc DOM'una doğrudan işlem yapmak yerine önce sanal bir DOM (Virtual DOM) üzerinde değişiklikleri hesaplar
+
+## Nasıl Çalışır ?
+
+- Arayüz değişimine sebep olan bir sepete ekle butoanu düşünelim.
+
+1. Butona tıklanır
+2. React yeni Virtual DOM oluşturur
+3. Butonda gerçkleşen değişimi Virtual DOM'da gerçekleştirir
+4. Eski Virtual DOM ile güncelleme sonrası Virtual DOM'u karşılaştırır
+5. Karşılaştırma sonucunda hangi arayüz elemanın değiştiğini tespi eder
+6. Gerçek DOM içerisinde sadece değişen elemanı günceller
+
+## Neden VDOM Kullanılır ?
+
+- Gerçek DOM üzerinden yapılan işlemler yavaştır. Sayfadaki en küçük bie değişiklik bile ağaç yapısının yeniden render olmasına neden olabilir. Virtual DOM bütün ağaç yapısının render olması yerinde sadece değişen kısmın render olmasını sağlayarak, arayüz güncelleme sürecini hızlandırır.
