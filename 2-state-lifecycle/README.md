@@ -50,3 +50,60 @@ setList(list.concat(product));
 - Key'leri ekrana basılan elemanların tc no su olarak düşünebilirisiniz key olmadığında ve listedeki bir eleman güncellendiğin react hangi elemanın güncellendiğini tespit edemez ve bütün listeyi yeniden renderlar.
 - Key değeri verdiğinizde listedeki hangi elemanın güncellenidğini tespit edebilir ve sadece güncellenen elemanı renderlar
 - Bu sayede key vererek map alanlarındaki performası arttırabiliriz
+
+# Bileşen Türleri
+
+- React'da 2 farklı bileşen tanımlama yöntemi mevcuttur:
+
+1. Function Component (Fonksiyonel Bileşen)
+
+- Modern react projelerinde en çok kullanılan bileşen türüdür
+- Basit fonksiyon yapısındadır
+- useState,useEffect gibi react hookları kullanılabilir
+- Daha az kod yazılır, anlaşılması daha kolaydır.
+
+```jsx
+const FunctionComponent = (props) => {
+  return (
+    <div>
+      <h3>{props.title}</h3>
+    </div>
+  );
+};
+```
+
+2. Class Components (Sınıf Tabanlı Bileşen)
+
+- Bu react'ın eski sürümlerinde daha yaygın
+- `extends React.Component` ifadesi ile bileşen yapsını miras alan bir sınıf tanımlanır
+- `render` methodu ile JSX döner
+- `this.props` `this.state` `this.setState` gibi yapılar kullanılır
+- `lifecycle` (yaşam döngüsü) methodları vardır
+
+```jsx
+class ClassComponent extend React.Component {
+   constructor(props){
+       super(props)
+   }
+
+   render(){
+       return (
+         <div>
+           <h3>{this.props.title}</h3>
+         </div>
+       )
+   }
+}
+```
+
+# Lifecycle (Yaşam Döngüsü) Methods
+
+- Bir component'in oluşum, güncellenme, kaldırılma süreçlerini yönetmek için kullanılan özel methodlardır.
+- Bu kavram özellikle class component'larda vardır.
+- Fakat modern react'ta bu işlemleri useEffect hooku aracılığıyla fonksiyonel component'larda yapabiliyoruz.
+
+- Bir bileşenin yaşam döngüsüs 3 aşamadan oluşur:
+
+1. Mount (Oluşturulması)
+2. Update (Güncellenmesi)
+3. Unmount (Kaldırılması)
