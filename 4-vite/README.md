@@ -1,6 +1,6 @@
 # VITE
 
-- Proje oluşturma için kullanılan ara.
+- Proje oluşturma için kullanılan araç.
 - React ve farklı teknolojilerden proje oluşturmak için kullanılır
 - `create-react-app` yerine `create vite` tercih etmemizin sebebi vite'ın proje oluşturma / ayağa kaldırma / değişikliklerin ekrana yansıma sürelerinin daha hızlı olması
 

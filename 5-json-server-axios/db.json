@@ -1,0 +1,52 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Sabah yürüyüşe çık",
+      "category": "spor",
+      "date": 1735689600000
+    },
+    {
+      "id": 2,
+      "title": "Market alışverişi yap",
+      "category": "alışveriş",
+      "date": 1735776000000
+    },
+    {
+      "id": 3,
+      "title": "Günlük egzersiz yap",
+      "category": "spor",
+      "date": 1735862400000
+    },
+    {
+      "id": 4,
+      "title": "Kitap oku",
+      "category": "kişisel gelişim",
+      "date": 1735948800000
+    },
+    {
+      "id": 5,
+      "title": "Faturaları öde",
+      "category": "finans",
+      "date": 1736035200000
+    },
+    {
+      "id": 6,
+      "title": "Aileyi ara",
+      "category": "sosyal",
+      "date": 1736121600000
+    },
+    {
+      "id": 7,
+      "title": "Proje toplantısına katıl",
+      "category": "iş",
+      "date": 1736208000000
+    },
+    {
+      "id": 8,
+      "title": "E-postaları kontrol et",
+      "category": "iş",
+      "date": 1736294400000
+    }
+  ]
+}
