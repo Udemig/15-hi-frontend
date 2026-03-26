@@ -1,18 +1,6 @@
 {
   "todos": [
     {
-      "id": 1,
-      "title": "Sabah yürüyüşe çık",
-      "category": "spor",
-      "date": 1735689600000
-    },
-    {
-      "id": 2,
-      "title": "Market alışverişi yap",
-      "category": "alışveriş",
-      "date": 1735776000000
-    },
-    {
       "id": 3,
       "title": "Günlük egzersiz yap",
       "category": "spor",
@@ -47,6 +35,18 @@
       "title": "E-postaları kontrol et",
       "category": "iş",
       "date": 1736294400000
+    },
+    {
+      "title": "dizi methodlarını çalış",
+      "category": "kişisel gelişim",
+      "date": 1773863591187,
+      "id": 9
+    },
+    {
+      "title": "Ders tekarı yap",
+      "category": "kişisel gelişim",
+      "date": 1773863936721,
+      "id": 11
     }
   ]
 }

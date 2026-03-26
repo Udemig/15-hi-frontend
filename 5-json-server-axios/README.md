@@ -39,23 +39,40 @@
 - **GET**
 
 ```jsx
-// api'a get isteği at
+// fetch
 fetch("http://localhost:5000/todos")
   // api'dan olumlu yanıt gelirce veriyi js formatına çevir
   .then((res) => res.json())
   // veriye eriş
   .then((data) => console.log(data));
 
-// -------------------
-
-axios
-  .get("http://localhost:5000/todos")
+// axios
+api
+  .get("/todos")
   // api'dan olumlu yanıt gelince veriye eriş
   .then((res) => console.log(res.data));
 ```
 
 - **POST**
 
-- **PATCH**
+```jsx
+// fetch
+fetch("http://localhost:5000/todos", {
+  method: "POST",
+  body: JSON.stringify(newTodo),
+  header: { "Content-Type": "application/json" },
+});
+
+// axios
+api.post("/todos", newTodo);
+```
 
 - **DELETE**
+
+```jsx
+// fetch
+fetch(`http://localhost:5000/todos/${id}`, { method: "DELETE" });
+
+// axios
+api.delete(`/todo/${id}`);
+```

@@ -37,3 +37,134 @@ header {
     color: #7f8c8d;
   }
 }
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.list-item {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: #3498db;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.1);
+  }
+
+  .item-content {
+    margin-bottom: 15px;
+
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+  }
+
+  .item-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .item-category {
+      background: rgb(1, 108, 231);
+      color: white;
+      padding: 5px 12px;
+      border-radius: 15px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .item-date {
+      color: #7f8c8d;
+      font-size: 14px;
+    }
+  }
+
+  .item-actions {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      background: #e74c3c;
+      color: white;
+
+      &:hover {
+        background: #c0392b;
+      }
+    }
+  }
+}
+
+.sort-btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  background: #230c21;
+  color: white;
+  display: flex;
+  justify-self: end;
+  margin-bottom: 10px;
+}
+
+.form-container {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+
+  h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+    }
+  }
+
+  .btn-group {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  button {
+    background: #3498db;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
