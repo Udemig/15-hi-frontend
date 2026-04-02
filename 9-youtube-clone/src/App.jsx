@@ -5,17 +5,21 @@ import Category from "./pages/category";
 import Header from "./components/header";
 import Sidebar from "./components/sidebar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 
 const App = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const toggleSidebar = () => setIsExpanded(!isExpanded);
+
   return (
     <BrowserRouter>
-      <div>
-        <Header />
+      <div className="min-h-screen">
+        <Header toggleSidebar={toggleSidebar} />
 
-        <div>
-          <Sidebar />
+        <div className="flex w-full">
+          <Sidebar isExpanded={isExpanded} />
 
-          <main>
+          <main className="flex-1 h-[calc(100vh-56px)] w-full overflow-x-hidden overflow-y-auto">
             <Routes>
               <Route path="/" element={<Feed />} />
               <Route path="/category/:category" element={<Category />} />

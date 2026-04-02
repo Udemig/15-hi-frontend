@@ -1,1 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 @import "tailwindcss";
+
+/* @layer: yaptığımız stillendirmeleri gruplandırmaya yarar */
+/* @apply: css dosyasında tailwind sınıflarını kullanmamızı sağlar */
+/* @theme: projede sıkça kullandığımız renk/font/stil tanımlanabilir */
+
+/* Değişkenler */
+@theme {
+  /* Varsayılan fontu değiştirdik */
+  --font-sans: "Roboto", sans-serif;
+  /* Projede kulllancığımız renkler tanımla */
+  --color-gray: #3f3f3f;
+  --color-white: #ffffff;
+  --color-black: #0f0f0f;
+  --color-dark: #272727;
+}
+
+/* Element stillendirmeleri */
+@layer base {
+  body {
+    @apply bg-black text-white;
+  }
+
+  button,
+  a {
+    @apply cursor-pointer transition duration-300;
+  }
+
+  *::-webkit-scrollbar {
+    @apply bg-black w-2;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    @apply bg-gray rounded cursor-pointer;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    @apply bg-[#5b5b5b];
+  }
+}
+
+/* Sınıf stillendirmeleri */
+@layer component {
+  .icon {
+    @apply p-2 hover:bg-zinc-700 transition rounded-full text-xl;
+  }
+
+  .page {
+    @apply py-6 px-4 h-[calc(100vh-56px)] w-full flex-1;
+  }
+}
+
+/* Yardımcı sınıflar */
+@layer utilities {
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+}
+
+/* Animasyon */
+@keyframes move {
+  from {
+    left: -500px;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
+.slide-in {
+  animation: move 400ms ease;
+}

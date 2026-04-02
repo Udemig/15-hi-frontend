@@ -1,30 +1,63 @@
-const Header = () => {
+import { Link } from "react-router-dom";
+import { MdMenu, MdMic, MdApps, MdOutlineAccountCircle } from "react-icons/md";
+import { CiSearch } from "react-icons/ci";
+import { IoIosVideocam } from "react-icons/io";
+import { FaBell } from "react-icons/fa";
+
+const Header = ({ toggleSidebar }) => {
   return (
-    <div>
-      <div className="h-10 bg-red-50 text-red-50 border-red-50 shadow-red-50" />
-      <div className="h-10 bg-red-100" />
-      <div className="h-10 bg-red-200" />
-      <div className="h-10 bg-red-300" />
-      <div className="h-10 bg-red-400" />
-      <div className="h-10 bg-red-500" />
-      <div className="h-10 bg-red-600" />
-      <div className="h-10 bg-red-700" />
-      <div className="h-10 bg-red-800" />
-      <div className="h-10 bg-red-900" />
-      <div className="h-10 bg-red-950" />
-      <div className="h-10 bg-[#437589]" />
+    <div className="flex justify-between gap-6 md:gap-8 px-4 h-14">
+      {/* Sol */}
+      <div className="flex items-center gap-3">
+        <button onClick={toggleSidebar} className="p-2 rounded-full hover:bg-gray">
+          <MdMenu className="text-xl md:text-2xl" />
+        </button>
 
-      <div className="h-10 border hover:bg-blue-500" />
+        <Link to="/" className="flex items-center gap-1">
+          <img src="/youtube.png" alt="youtube" className="w-8" />
+          <span className="text-xl font-bold tracking-tight max-sm:hidden">Youtube</span>
+        </Link>
+      </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        <div className="border p-5 text-4xl">KART</div>
-        <div className="border p-5 text-4xl">KART</div>
-        <div className="border p-5 text-4xl">KART</div>
-        <div className="border p-5 text-4xl">KART</div>
-        <div className="border p-5 text-4xl">KART</div>
-        <div className="border p-5 text-4xl">KART</div>
-        <div className="border p-5 text-4xl">KART</div>
-        <div className="border p-5 text-4xl">KART</div>
+      {/* Orta */}
+      <div className="flex-1 max-w-182 flex-center">
+        <form className="flex w-full max-w-160 items-center">
+          <div className="flex flex-1">
+            <input
+              type="text"
+              placeholder="Ara"
+              className="w-full bg-[#121212] border border-gray h-10 px-4 text-white focus:border-blue-500 outline-none rounded-l-full"
+            />
+            <button className="w-16 h-10 bg-[#222222] border border-gray rounded-r-full flex justify-center items-center hover:bg-gray">
+              <CiSearch className="text-xl" />
+            </button>
+          </div>
+
+          <button className="ml-2 p-2 bg-[#181818] hover:bg-gray rounded-full max-sm:hidden">
+            <MdMic />
+          </button>
+        </form>
+      </div>
+
+      {/* Sağ */}
+      <div className="flex items-center gap-2">
+        <button className="icon max-sm:hidden">
+          <IoIosVideocam />
+        </button>
+        <button className="icon max-sm:hidden">
+          <MdApps />
+        </button>
+
+        <button className="icon relative">
+          <FaBell />
+          <span className="bg-red-600 size-5 flex-center rounded-full font-bold text-xs absolute -top-1 -right-1">
+            3
+          </span>
+        </button>
+
+        <button className="icon">
+          <MdOutlineAccountCircle className="text-2xl" />
+        </button>
       </div>
     </div>
   );
