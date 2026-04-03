@@ -29,7 +29,7 @@
   }
 
   *::-webkit-scrollbar {
-    @apply bg-black w-2;
+    @apply bg-black w-2 h-2;
   }
 
   *::-webkit-scrollbar-thumb {

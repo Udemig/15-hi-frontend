@@ -3,6 +3,8 @@ import api from "../../utils/api";
 import { useEffect, useState } from "react";
 import CategoryLoader from "../../components/loader/category-loader";
 import Error from "../../components/error";
+import Shorts from "../../components/shorts";
+import Card from "../../components/card";
 
 const Category = () => {
   const { category } = useParams();
@@ -41,7 +43,17 @@ const Category = () => {
 
   return (
     <div className="page">
-      <h1>{category}</h1>
+      <div className="space-y-8">
+        {shortsListings?.[0] && <Shorts data={shortsListings[0].data} />}
+
+        <div className="grid gap-4 lg:gap-6 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+          {videos.map((video, key) => (
+            <Card key={key} video={video} />
+          ))}
+        </div>
+
+        {shortsListings?.[1] && <Shorts data={shortsListings[1].data} />}
+      </div>
     </div>
   );
 };
