@@ -1,10 +1,24 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MdMenu, MdMic, MdApps, MdOutlineAccountCircle } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { IoIosVideocam } from "react-icons/io";
 import { FaBell } from "react-icons/fa";
 
 const Header = ({ toggleSidebar }) => {
+  // useNavigate kurulum
+  const navigate = useNavigate();
+
+  // form gönderilince arama sayfasına yönlendir
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // inputun içinde yazılan yazıya eriş
+    const text = e.target[0].value;
+
+    // results sayfasına yönlendir
+    navigate(`/results?search_query=${text}`);
+  };
+
   return (
     <div className="flex justify-between gap-6 md:gap-8 px-4 h-14">
       {/* Sol */}
@@ -21,7 +35,7 @@ const Header = ({ toggleSidebar }) => {
 
       {/* Orta */}
       <div className="flex-1 max-w-182 flex-center">
-        <form className="flex w-full max-w-160 items-center">
+        <form onSubmit={handleSubmit} className="flex w-full max-w-160 items-center">
           <div className="flex flex-1">
             <input
               type="text"

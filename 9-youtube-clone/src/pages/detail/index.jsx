@@ -4,6 +4,9 @@ import api from "../../utils/api";
 import Spinner from "../../components/loader/spinner";
 import Error from "../../components/error";
 import Card from "../../components/card";
+import ChannelInfo from "./channel-info";
+import Description from "./description";
+import Comments from "./comments";
 
 const Detail = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -12,8 +15,6 @@ const Detail = () => {
 
   const [searchParams] = useSearchParams();
   const id = searchParams.get("v");
-
-  console.log(video);
 
   useEffect(() => {
     setIsLoading(true);
@@ -27,7 +28,7 @@ const Detail = () => {
       .then((res) => setVideo(res.data))
       .catch((err) => setError(err.message))
       .finally(() => setIsLoading(false));
-  }, []);
+  }, [id]);
 
   if (isLoading) return <Spinner />;
 
@@ -40,18 +41,26 @@ const Detail = () => {
           <iframe
             width="100%"
             height="100%"
-            src={`https://www.youtube.com/embed/${id}`}
+            src={`https://www.youtube.com/embed/${id}?autoplay=1`}
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             allowFullScreen="true"
             webkitallowfullscreen="true"
-            mozallowfullscreen="true"
+            autoPlay
           ></iframe>
         </div>
 
-        <div></div>
+        <div className="space-y-4 mt-4">
+          <h1 className="text-xl font-bold line-clamp-2 leading-tight">{video.title}</h1>
+
+          <ChannelInfo video={video} />
+
+          <Description video={video} />
+
+          <Comments videoId={id} count={video?.commentCount} />
+        </div>
       </div>
 
       <div className="lg:w-100">
