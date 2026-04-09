@@ -7,7 +7,7 @@ import Detail from "./pages/detail";
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="min-h-screen flex flex-col bg-gray-50">
+      <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900 dark:text-white">
         <Header />
 
         <main className="container flex-1 py-6">
