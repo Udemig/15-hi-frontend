@@ -22,10 +22,20 @@ export const formatPercantage = (value) => {
 };
 
 // büyük sayıları formatla
+const NUMBER_UNITS = [
+  { value: 1e12, symbol: "T" },
+  { value: 1e9, symbol: "Mr" },
+  { value: 1e6, symbol: "Mn" },
+];
+
 export const formatBigNumber = (value) => {
   if (value === null) return "N/A";
 
-  //todo: parametre olarak gelen değerin basamak sayısına göre böl
+  for (const unit of NUMBER_UNITS) {
+    if (value >= unit.value) {
+      return `$${(value / unit.value).toFixed(2)}${unit.symbol}`;
+    }
+  }
 
-  return "işlenmiş";
+  return `$${value.toLocaleString()}`;
 };

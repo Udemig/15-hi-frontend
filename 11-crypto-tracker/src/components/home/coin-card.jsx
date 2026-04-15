@@ -1,5 +1,6 @@
 import { TrendingDown, TrendingUp } from "lucide-react";
 import { formatPrice, formatPercantage, formatBigNumber } from "../../utils/helpers";
+import { Link } from "react-router-dom";
 
 const CoinCard = ({ coin }) => {
   const isPositive = coin.price_change_percentage_24h >= 0;
@@ -7,7 +8,10 @@ const CoinCard = ({ coin }) => {
   const icon = isPositive ? <TrendingUp className="size-4" /> : <TrendingDown className="size-4" />;
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg p-6 hover:scale-105 transition">
+    <Link
+      to={`/coin/${coin.id}`}
+      className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg p-6 hover:scale-105 transition"
+    >
       {/* Üst Kısım */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-3">
@@ -51,8 +55,19 @@ const CoinCard = ({ coin }) => {
       </div>
 
       {/* Alt Kısım */}
-      <div></div>
-    </div>
+      <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 flex justify-between text-gray-500 dark:text-gray-400">
+        <span>#{coin.market_cap_rank}</span>
+
+        <span>
+          {new Date(coin.last_updated).toLocaleDateString("tr", {
+            day: "2-digit",
+            month: "2-digit",
+            hour: "2-digit",
+            minute: "2-digit",
+          })}
+        </span>
+      </div>
+    </Link>
   );
 };
 
