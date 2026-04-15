@@ -10,3 +10,8 @@
 # API
 
 - https://www.coingecko.com/en/api
+
+# Proje Yayınlama Adımları
+
+1. Projenizi hazırlayın (build'i alınabilmeli)
+2. Projeyi Githuba Yükle

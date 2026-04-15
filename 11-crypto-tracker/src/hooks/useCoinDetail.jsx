@@ -58,6 +58,13 @@ const useCoinDetail = (coinId) => {
     getPriceHistory();
   }, []);
 
+  // gün değeri değişince yeni fyat geçmişini al
+  useEffect(() => {
+    if (coin) {
+      refreshData();
+    }
+  }, [selectedPeriod]);
+
   // hook'un return ettiği verileri belirle
   return {
     coin,
