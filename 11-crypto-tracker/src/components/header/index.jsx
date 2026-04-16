@@ -18,7 +18,7 @@ const Header = () => {
 
             <div>
               <h1 className="text-xl font-bold text-gray-900 dark:text-white">Udemig Tracker</h1>
-              <p className="text-xs text-gray-500 dark:text-gray-400">Kripta para takip sistemi</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400">Kripta paralar için takip sistemi.</p>
             </div>
           </Link>
 
