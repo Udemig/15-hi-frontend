@@ -18,7 +18,7 @@ const Header = () => {
 
             <div>
               <h1 className="text-xl font-bold text-gray-900 dark:text-white">Udemig Tracker</h1>
-              <p className="text-xs text-gray-500 dark:text-gray-400">Kripta paralar için takip sistemi.</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400">Kripto paralar için takip sistemi.</p>
             </div>
           </Link>
 
@@ -29,7 +29,11 @@ const Header = () => {
               <span className="text-sm">3</span>
             </button>
 
-            <button onClick={toggleTheme} className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 dark:text-gray-300">
+            <button
+              aria-label="tema değiş"
+              onClick={toggleTheme}
+              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 dark:text-gray-300"
+            >
               {isDarkTheme ? <Moon className="size-5 text-gray-400" /> : <Sun className="size-5 text-yellow-500" />}
             </button>
 

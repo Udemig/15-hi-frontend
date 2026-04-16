@@ -87,6 +87,28 @@
 
 1. Teknik SEO
 
+- Sitenin alt yapısı ile ilgili güncellemeler
+- - Site hızı
+- - Mobil uyumluluk
+- - Url yapısı (`/coins/123` yerine `/coins/bitcoin` kullanılmalı)
+- - SSL (`https`)
+- - 404 Hataları
+
 2. İçerik
 
+- Sayfanın içeriğiyle alakalıdır
+- - Başlıklar
+- - Anahtar kelimeler
+- - Meta etiketleri
+- - Görsel'lerde alt etiketleri
+- - Input'ların label'lara bağlı olması
+- - Button'ların name değerlerinin olması
+- - Semantik etiket kullanıcmı
+- - Site içe linkler
+
 3. Off Page SEO
+
+- Başka sitelerin sana verdiği değer:
+- - Backlink (başa sitelerden link almak)
+- Sosyal Medya Paylaşımları
+- Marka Bilinilirliği

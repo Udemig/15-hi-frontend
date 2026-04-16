@@ -3,6 +3,7 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import Home from "./pages/home";
 import Detail from "./pages/detail";
+import NotFound from "./pages/not-found";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/coin/:id" element={<Detail />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
 
