@@ -1,5 +1,5 @@
 {
-  "name": "1-basics",
+  "name": "2-yemek-sepeti-clone",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,10 +13,13 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.2.4",
     "axios": "^1.15.2",
-    "json-server": "^1.0.0-beta.15",
+    "json-server": "^0.17.4",
+    "lucide-react": "^1.8.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "react-redux": "^9.2.0",
+    "react-router-dom": "^7.14.2",
+    "react-toastify": "^11.1.0",
     "redux": "^5.0.1",
     "redux-thunk": "^3.1.0",
     "tailwindcss": "^4.2.4",

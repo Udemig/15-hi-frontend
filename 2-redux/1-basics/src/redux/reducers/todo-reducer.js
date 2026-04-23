@@ -1,3 +1,5 @@
+import AT from "../actions/action-types";
+
 /*
  ! Reducer fonksiyonu
  * State'i tutuan ve yöneten fonksiyon
@@ -11,26 +13,30 @@
  */
 
 const initialState = {
+  isLoading: true,
+  error: null,
   todos: [],
 };
 
 const todoReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "CREATE":
+    case AT.CREATE: {
       // aksiyonun payload'u ile gelen yeni nesneyi diziye ekle
       const newTodos = state.todos.concat(action.payload);
 
       // state'in son halini return et
       return { ...state, todos: newTodos };
+    }
 
-    case "DELETE":
+    case AT.DELETE: {
       // aksiyonun payload'ı ile gelen id'li elemanı diziden kaldır
       const filtredTodos = state.todos.filter((todo) => todo.id !== action.payload);
 
       // state'in son halini return et
       return { ...state, todos: filtredTodos };
+    }
 
-    case "TOGGLE":
+    case AT.TOGGLE: {
       // aksiyonun payload'ı ile gelen todo'nun isDone değerini güncelle
       const toggledTodos = state.todos.map((todo) =>
         todo.id === action.payload ? { ...todo, isDone: !todo.isDone } : todo,
@@ -38,6 +44,19 @@ const todoReducer = (state = initialState, action) => {
 
       // state'in son halini return et
       return { ...state, todos: toggledTodos };
+    }
+
+    case AT.LOADING: {
+      return { ...state, isLoading: true };
+    }
+
+    case AT.ERROR: {
+      return { ...state, isLoading: false, error: action.payload };
+    }
+
+    case AT.SUCCESS: {
+      return { ...state, isLoading: false, error: null, todos: action.payload };
+    }
 
     default:
       return state;

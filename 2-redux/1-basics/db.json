@@ -1,0 +1,29 @@
+{
+  "todos": [
+    {
+      "id": "912c37d4-9a85-4022-85d6-ff487d2c2d43",
+      "text": "Typescript çalış",
+      "isDone": false,
+      "createdAt": 1776881879866
+    },
+    {
+      "id": "f60472c0-d168-470c-bb3a-54656c7c2199",
+      "text": "Redux Öğren",
+      "isDone": false,
+      "createdAt": 1776881883252
+    },
+    {
+      "id": "74e89d02-77f7-427b-a7ed-3175fce265c3",
+      "text": "Tailwind Projesi Yap",
+      "isDone": false,
+      "createdAt": 1776881892787
+    },
+    {
+      "id": "L3DyBLRFdkw",
+      "text": "Ders Çalış",
+      "isDone": false,
+      "createdAt": 1776883042592
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

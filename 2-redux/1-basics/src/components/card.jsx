@@ -1,14 +1,16 @@
 import { useDispatch } from "react-redux";
+import { deleteTodo, toggleTodo } from "../redux/actions/todo-actions";
+import api from "../utils/api";
 
 const Card = ({ todo }) => {
   const dispatch = useDispatch();
 
   const handleDelete = () => {
-    dispatch({ type: "DELETE", payload: todo.id });
+    dispatch(deleteTodo(todo.id));
   };
 
   const handleStatus = () => {
-    dispatch({ type: "TOGGLE", payload: todo.id });
+    dispatch(toggleTodo({ todoId: todo.id, isDone: !todo.isDone }));
   };
 
   return (
