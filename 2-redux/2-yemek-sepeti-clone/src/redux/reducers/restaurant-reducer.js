@@ -1,3 +1,5 @@
+import AT from "../actions/action-types";
+
 const initialState = {
   isLoading: true,
   error: null,
@@ -6,14 +8,14 @@ const initialState = {
 
 const restaurantReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "X":
-      return state;
+    case AT.REST_LOADING:
+      return { ...state, isLoading: true };
 
-    case "Y":
-      return state;
+    case AT.REST_ERROR:
+      return { ...state, isLoading: false, error: action.payload };
 
-    case "Z":
-      return state;
+    case AT.REST_SUCCESS:
+      return { ...state, isLoading: false, error: null, restaurants: action.payload };
 
     default:
       return state;

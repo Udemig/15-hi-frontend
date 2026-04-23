@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getRestaurants } from "./redux/actions/restaurant-actions";
+import { getCart } from "./redux/actions/cart-actions";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -14,6 +15,7 @@ const App = () => {
   useEffect(() => {
     // api'dan verileri alır ve reducer'a haber verir
     dispatch(getRestaurants());
+    dispatch(getCart());
   }, []);
 
   return (
