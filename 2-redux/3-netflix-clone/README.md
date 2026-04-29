@@ -10,3 +10,8 @@
 - @splidejs/react-splide
 - @splidejs/splide
 - tailwindcss
+
+# API
+
+- TMDB'YE istek atakrne kullanacağınız RAW_BODY
+- {"media_type":"movie","media_id":936075,"watchlist":true}
