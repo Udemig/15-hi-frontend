@@ -1,13 +1,30 @@
 import { useSelector } from "react-redux";
+import TableRow from "./table-row";
 
 const TaskTable = () => {
   const { tasks } = useSelector((store) => store.crudReducer);
 
+  console.log(tasks);
+
   return (
-    <div>
-      {tasks.map((task) => (
-        <h1>{task.title}</h1>
-      ))}
+    <div className="relative overflow-x-auto bg-white shadow-xs rounded border border-zinc-200 my-5 ">
+      <table className="w-full text-sm text-left text-body">
+        <thead className="bg-zinc-200 border-b border-zinc-200">
+          <tr>
+            <th>Görev</th>
+            <th>Oluşturan</th>
+            <th>Atanan</th>
+            <th>Tarih</th>
+            <th>İşlemler</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {tasks.map((task) => (
+            <TableRow key={task.id} task={task} />
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

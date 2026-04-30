@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
 import { INPUTS } from "../utils/constants";
-import { createTask } from "../redux/slices/crudSlice";
+import { createTask, updateTask } from "../redux/slices/crudSlice";
 
-const TaskModal = ({ isOpen, close }) => {
+const TaskModal = ({ isOpen, close, task }) => {
   if (!isOpen) return;
 
   const dispach = useDispatch();
@@ -16,15 +16,17 @@ const TaskModal = ({ isOpen, close }) => {
     // inputlardaki verilere nesne formatında eriş
     const taskData = Object.fromEntries(formData.entries());
 
-    // reducer'a task ekleniceğini haber ver
-    dispach(createTask(taskData));
+    // reducer'a haber ver
+    task
+      ? dispach(updateTask({ id: task.id, ...taskData })) //
+      : dispach(createTask(taskData));
 
     // modal'ı kapat
     close();
   };
 
   return (
-    <div className="fixed bg-black/20 inset-0 backdrop-blur-xs grid place-items-center">
+    <div className="fixed bg-black/20 inset-0 backdrop-blur-xs grid place-items-center z-10">
       <div className="bg-white p-5 rounded-md min-w-100">
         <div className="flex justify-end">
           <button onClick={close}>X</button>
@@ -34,7 +36,7 @@ const TaskModal = ({ isOpen, close }) => {
           {INPUTS.map((item, key) => (
             <div key={key} className="flex flex-col gap-1">
               <label htmlFor={item.name}>{item.label}</label>
-              <input id={item.name} name={item.name} type={item.type} />
+              <input id={item.name} name={item.name} type={item.type} defaultValue={task?.[item.name]} />
             </div>
           ))}
 
@@ -44,7 +46,7 @@ const TaskModal = ({ isOpen, close }) => {
             </button>
 
             <button type="submit" className="flex-1">
-              Oluştur
+              {task ? "Kaydet" : "Oluştur"}
             </button>
           </div>
         </form>
