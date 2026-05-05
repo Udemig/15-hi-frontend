@@ -3,7 +3,7 @@ import ReactSelect from "react-select";
 import { selectStyles } from "../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { useMemo } from "react";
-import { setSource, setTarget } from "../redux/slices/translate-slice";
+import { setSource, setTarget, swap } from "../redux/slices/translate-slice";
 
 const LanguageSelector = () => {
   const dispatch = useDispatch();
@@ -14,7 +14,13 @@ const LanguageSelector = () => {
   // store'daki languages dizisindeki nesnelerin keylerini güncelle
   // api'dan gelen: {language:"", name:""}
   // istediğimiz  : {label:"", value:""}
-  const formatted = useMemo(() => languages.map((item) => ({ label: item.name, value: item.language })), [languages]);
+  const formatted = useMemo(
+    () =>
+      languages
+        .map((item) => ({ label: item.name, value: item.language }))
+        .sort((a, b) => a.label.localeCompare(b.label)),
+    [languages],
+  );
 
   // dili algıla seçeneği
   const detect = { label: "Dili algıla", value: undefined };
@@ -32,13 +38,29 @@ const LanguageSelector = () => {
             className="text-black"
             styles={selectStyles}
             value={sourceLang}
-            onChange={(selected) => dispatch(setSource(selected))}
+            onChange={(selected) => {
+              // eğer seçilen dil karşıdaki dilin aynısı ise
+              if (selected.value === targetLang.value) {
+                // dili algıla seçiliyse hiçbir şey yapma
+                if (!sourceLang.value) return;
+
+                // dili algıla seçili değilse dillerin yerini değiştir
+                return dispatch(swap());
+              }
+
+              // farklı bir dil seçilirse seçimi uygula
+              dispatch(setSource(selected));
+            }}
           />
         </div>
 
         {/* Değiştirme Butonu */}
         <div className="flex justify-center items-center">
-          <button className="size-10 lg:size-12 bg-zinc-700 rounded-full flex justify-center items-center disabled:opacity-50">
+          <button
+            disabled={!sourceLang.value}
+            onClick={() => dispatch(swap())}
+            className="size-10 lg:size-12 bg-zinc-700 rounded-full flex justify-center items-center disabled:opacity-50"
+          >
             <ArrowLeftRight className="size-4 lg:size-5 max-lg:rotate-90" />
           </button>
         </div>
@@ -53,13 +75,18 @@ const LanguageSelector = () => {
             className="text-black"
             styles={selectStyles}
             value={targetLang}
-            onChange={(selected) => dispatch(setTarget(selected))}
+            onChange={(selected) => {
+              if (selected.value === sourceLang.value) {
+                return dispatch(swap());
+              }
+              dispatch(setTarget(selected));
+            }}
           />
         </div>
       </div>
 
       <div className="text-center">
-        <p className="text-xs text-zinc-500">189 dil destekleniyor</p>
+        <p className="text-xs text-zinc-500">{languages.length} dil destekleniyor</p>
       </div>
     </div>
   );

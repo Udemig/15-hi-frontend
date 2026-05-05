@@ -10,6 +10,7 @@ const translateSlice = createSlice({
     translatedText: "",
     isLoading: false,
     error: null,
+    history: [],
   },
 
   reducers: {
@@ -24,11 +25,29 @@ const translateSlice = createSlice({
     setText: (state, action) => {
       state.textToTranslate = action.payload;
     },
+
+    swap: (state) => {
+      // değişme anında state'ler birbirini ezmesin diye geçici değişkenler oluştur
+      const tempSource = state.sourceLang;
+      const tempTarget = state.targetLang;
+      const tempText = state.textToTranslate;
+      const tempTranslated = state.translatedText;
+
+      state.sourceLang = tempTarget;
+      state.targetLang = tempSource;
+      state.textToTranslate = tempTranslated;
+      state.translatedText = tempText;
+    },
+
+    clearHistory: (state) => {
+      state.history = [];
+    },
   },
 
   extraReducers: (builder) => {
     builder.addCase(translateText.pending, (state) => {
       state.isLoading = true;
+      state.translatedText = "";
     });
 
     builder.addCase(translateText.rejected, (state, action) => {
@@ -40,10 +59,22 @@ const translateSlice = createSlice({
       state.isLoading = false;
       state.error = null;
       state.translatedText = action.payload;
+
+      // çeviri sonucu geldiyse çeviri geçmişine kaydet
+      if (state.textToTranslate && action.payload) {
+        state.history.unshift({
+          id: Date.now(),
+          textToTranslate: state.textToTranslate,
+          translatedText: action.payload,
+          sourceLang: state.sourceLang.label,
+          targetLang: state.targetLang.label,
+          timestamp: new Date().getTime(),
+        });
+      }
     });
   },
 });
 
-export const { setSource, setTarget, setText } = translateSlice.actions;
+export const { setSource, setTarget, setText, swap, clearHistory } = translateSlice.actions;
 
 export default translateSlice.reducer;
