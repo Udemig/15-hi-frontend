@@ -20,6 +20,14 @@
   .badge {
     @apply bg-black/30 text-xs py-1 px-3 rounded-md font-semibold;
   }
+
+  .passive-marker {
+    display: none !important;
+  }
+
+  .active-marker {
+    display: flex !important;
+  }
 }
 
 /* From Uiverse.io by mrhyddenn */

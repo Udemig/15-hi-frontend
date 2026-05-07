@@ -1,5 +1,6 @@
 import { X } from "lucide-react";
 import HeadLoader from "../loader/head-loader";
+import c from "../../utils/null-check";
 
 const Head = ({ isLoading, error, info, close }) => {
   return (
@@ -9,13 +10,13 @@ const Head = ({ isLoading, error, info, close }) => {
       ) : (
         <div className="flex items-center gap-2">
           <h3 title="Çağrı İşareti" className="text-xl font-bold">
-            {info?.identification?.callsign}
+            {c(info?.identification?.callsign)}
           </h3>
           <span title="Uçuş Numarası" className="badge">
-            {info?.identification?.number?.default}
+            {c(info?.identification?.number?.default)}
           </span>
           <span title="Uçak Tip Kodu" className="badge">
-            {info?.aircraft?.model?.code}
+            {c(info?.aircraft?.model?.code)}
           </span>
         </div>
       )}

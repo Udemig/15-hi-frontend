@@ -9,12 +9,10 @@ import { getDetail } from "../../redux/actions";
 import Loader from "../loader";
 import Error from "../error";
 
-const Modal = ({ id, isOpen, close }) => {
-  if (!isOpen) return;
+const Modal = ({ id, close }) => {
+  if (!id) return;
 
   const { isLoading, error, info } = useSelector((store) => store.detailReducer);
-
-  console.log(info);
 
   const dispatch = useDispatch();
 
@@ -23,7 +21,7 @@ const Modal = ({ id, isOpen, close }) => {
   }, [id]);
 
   return (
-    <div className="fixed top-0 left-0 h-screen z-99999 flex items-center max-sm:justify-center max-sm:inset-0 max-sm:backdrop-blur-xs">
+    <div className="fixed top-0 left-0 h-screen z-99999! flex items-center max-sm:justify-center max-sm:inset-0 max-sm:backdrop-blur-xs">
       <div className="w-90 max-sm:w-[70%] min-h-10/12 ml-4 gradient text-white rounded-3xl flex flex-col p-5 shadow-2xl mt-10 overflow-y-auto">
         <Head isLoading={isLoading} error={error} info={info} close={close} />
 
@@ -36,10 +34,10 @@ const Modal = ({ id, isOpen, close }) => {
             <div className="flex flex-col gap-5">
               <Gallery images={info.aircraft.images} />
               <Airport airportData={info.airport} />
-              <Time />
+              <Time timeData={info.time} />
             </div>
 
-            <Aircraft />
+            <Aircraft aircraftData={info.aircraft} />
           </div>
         )}
       </div>
