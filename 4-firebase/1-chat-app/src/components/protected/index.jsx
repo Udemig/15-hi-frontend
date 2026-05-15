@@ -25,7 +25,7 @@ const Protected = () => {
 
   // 5. kullanıcı oturumu açıksa: alt route'un elementini ekrana bas
   // context: alt route'lara kullanıcı verisini prop olarak gönderdik
-  return <Outlet context={user}/>;
+  return <Outlet context={user} />;
 };
 
 export default Protected;
