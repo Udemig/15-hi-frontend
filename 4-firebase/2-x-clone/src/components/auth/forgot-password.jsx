@@ -1,5 +1,5 @@
-const ForgotPassword = ({ isLoadingMode }) => {
-  if (!isLoadingMode) return <div className="h-7 w-1" />;
+const ForgotPassword = ({ isLoginMode }) => {
+  if (!isLoginMode) return <div className="h-7 w-1" />;
 
   return (
     <>

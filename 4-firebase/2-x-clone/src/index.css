@@ -29,4 +29,8 @@
   .submit-button {
     @apply bg-secondary text-primary font-bold h-9 px-5 py-1.5 rounded-full tracking-wide min-w-26.25 flex justify-center items-center;
   }
+
+  .post-icon {
+    @apply relative rounded-full cursor-pointer p-2;
+  }
 }
