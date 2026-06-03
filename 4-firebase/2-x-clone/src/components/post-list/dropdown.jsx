@@ -4,9 +4,12 @@ import { MdDelete, MdEdit } from "react-icons/md";
 import { auth, db } from "../../firebase";
 import { deleteDoc, doc } from "firebase/firestore";
 import deleteFile from "../../firebase/deleteFile";
+import Modal from "../modal";
+import EditModal from "../modal/edit-modal";
 
 const Dropdown = ({ post }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // silme butonuna tıklanınca
   const handleDelete = async () => {
@@ -32,24 +35,31 @@ const Dropdown = ({ post }) => {
   if (!isOwn) return;
 
   return (
-    <div className="relative">
-      <button onClick={() => setIsOpen(!isOpen)}>
-        <BsThreeDots className="text-zinc-400" />
-      </button>
+    <>
+      <div className="relative">
+        <button onClick={() => setIsOpen(!isOpen)}>
+          <BsThreeDots className="text-zinc-400" />
+        </button>
 
-      {isOpen && (
-        <div className="absolute bg-zinc-700/50 -inset-e-1 rounded-lg z-99 backdrop-blur-lg shadow-lg">
-          <button className="flex items-center gap-5 px-4 py-2 border-b border-zinc-500">
-            <MdEdit />
-            <span className="text-sm">Düzenle</span>
-          </button>
-          <button onClick={handleDelete} className="flex items-center gap-5 px-4 py-2">
-            <MdDelete />
-            <span className="text-sm">Sil</span>
-          </button>
-        </div>
-      )}
-    </div>
+        {isOpen && (
+          <div className="absolute bg-zinc-700/50 -inset-e-1 rounded-lg z-99 backdrop-blur-lg shadow-lg">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="flex items-center gap-5 px-4 py-2 border-b border-zinc-500"
+            >
+              <MdEdit />
+              <span className="text-sm">Düzenle</span>
+            </button>
+            <button onClick={handleDelete} className="flex items-center gap-5 px-4 py-2">
+              <MdDelete />
+              <span className="text-sm">Sil</span>
+            </button>
+          </div>
+        )}
+      </div>
+
+      <EditModal isOpen={isModalOpen} close={() => setIsModalOpen(false)} post={post} />
+    </>
   );
 };
 

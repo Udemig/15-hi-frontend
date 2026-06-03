@@ -1,9 +1,27 @@
-const deleteFile = (mediaUrl) => {
+import { toast } from "react-toastify";
+import { deleteObject, ref } from "firebase/storage";
+import { storage } from "../firebase";
+
+const deleteFile = async (mediaUrl) => {
   if (!mediaUrl) return;
 
-  // https://firebasestorage.googleapis.com/v0/b/hi-x-1688e.firebasestorage.app/o/[DOSYA_YOLU]?alt=media&token=ef7b518b-4455-4756-b674-92d1a1ee4501
+  try {
+    // url'deki karakter kodlarını normale çevir %2f === /  %20 === " "
+    const normalUrl = decodeURIComponent(mediaUrl);
 
-  console.log(mediaUrl);
+    // url'den dosya yolunu çıkart
+    const startIndex = normalUrl.indexOf("/o/") + 3;
+    const endIndex = normalUrl.indexOf("?");
+    const path = normalUrl.slice(startIndex, endIndex);
+
+    // silinecek dosyanın referansını al
+    const fileRef = ref(storage, path);
+
+    // medyayı sil
+    await deleteObject(fileRef);
+  } catch (error) {
+    toast.error("Bir hata oluştu");
+  }
 };
 
 export default deleteFile;

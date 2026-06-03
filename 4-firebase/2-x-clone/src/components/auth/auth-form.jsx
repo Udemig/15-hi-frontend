@@ -10,7 +10,7 @@ import { auth } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 
 const AuthForm = () => {
-  const [isLoginMode, setIsLoginMode] = useState(false);
+  const [isLoginMode, setIsLoginMode] = useState(true);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
