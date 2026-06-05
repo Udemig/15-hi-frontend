@@ -33,3 +33,35 @@
 3. Kod Yaz: Testleri geçicek minimum kodu yaz
 4. Test Çalıştır: Tüm testlerin geçtiğini kontrol et
 5. Refeactor: Kodu iyileştir, testlerin hala geçtiğinden emin ol.
+
+# Selectors - Seçici Methodlar
+
+- Selectors, test ortamında renderlanan elementleri almak için kullandığımız methodlardır.
+- Seçiciler 3 ana parçadan oluşur
+
+1. Yöntem
+
+- _get_: ekrandaki elementi alır, elementi bulumazsa hata verir
+- - ekranda olduğunu kontrol etmek istediğimiz elementler için kullanırız
+
+- _query_: ekrandaki elementi alır, elementi bulamazsa hata vermez ve null döndür
+- - elementin ekranda olmadığını kontrol etmek istediğimiz zaman kullanırız
+
+- _find_: ekrana asenkron olarak basılan elementleri almak için kullanılır
+- - eğer api isteğinin ardından ekrana basılan elementi almak istiyorsak kullanırız
+
+2. All İfadesi (Opsiyonel)
+
+- Eğerki ekranda aynı koşula uyan birden fazla element varsa ve hepsini almak istiyorsak kullandığımız yöntemin devamına `All` ifadesi ekleriz
+- All ifadesini kullanırsak dönden cevap her zaman dizi formatında olur
+- `getAllBy` `queryAllBy` `findAllBy`
+
+3. Sorgu Türü
+
+- Hnagi yöntemle elementi seçiceğimizi belirleyen methodlardır.
+- ByRole
+- ByLabelText
+- ByPlaceholderText
+- ByAltText
+- ByTitle
+- ByTestId

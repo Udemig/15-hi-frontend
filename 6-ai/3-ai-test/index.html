@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Modern ve responsive hava durumu uygulaması" />
+  <title>Hava Durumu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="weather-card" aria-live="polite">
+      <!-- Arama -->
+      <form class="search" id="search-form" role="search">
+        <span class="search__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20">
+            <path
+              fill="currentColor"
+              d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5Zm-6 0A4.5 4.5 0 1 1 14 9.5 4.49 4.49 0 0 1 9.5 14Z"
+            />
+          </svg>
+        </span>
+        <input
+          type="text"
+          id="city-input"
+          class="search__input"
+          placeholder="Şehir ara..."
+          autocomplete="off"
+          aria-label="Şehir adı"
+        />
+        <button type="submit" class="search__btn">Ara</button>
+      </form>
+
+      <!-- Hata mesajı -->
+      <p class="error" id="error" role="alert" hidden></p>
+
+      <!-- Ana hava durumu -->
+      <div class="current" id="current">
+        <div class="current__head">
+          <div>
+            <h1 class="current__city" id="city">—</h1>
+            <p class="current__date" id="date">—</p>
+          </div>
+          <div class="current__icon" id="icon" aria-hidden="true">⛅</div>
+        </div>
+
+        <div class="current__temp">
+          <span id="temp">--</span><span class="deg">°C</span>
+        </div>
+        <p class="current__desc" id="description">—</p>
+      </div>
+
+      <!-- Detaylar -->
+      <ul class="details" id="details">
+        <li class="detail">
+          <span class="detail__icon" aria-hidden="true">🌡️</span>
+          <div>
+            <p class="detail__label">Hissedilen</p>
+            <p class="detail__value"><span id="feels">--</span>°C</p>
+          </div>
+        </li>
+        <li class="detail">
+          <span class="detail__icon" aria-hidden="true">💧</span>
+          <div>
+            <p class="detail__label">Nem</p>
+            <p class="detail__value"><span id="humidity">--</span>%</p>
+          </div>
+        </li>
+        <li class="detail">
+          <span class="detail__icon" aria-hidden="true">💨</span>
+          <div>
+            <p class="detail__label">Rüzgar</p>
+            <p class="detail__value"><span id="wind">--</span> km/s</p>
+          </div>
+        </li>
+      </ul>
+
+      <!-- Hızlı seçim -->
+      <div class="chips" id="chips" role="group" aria-label="Hızlı şehir seçimi"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

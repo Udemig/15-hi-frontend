@@ -21,7 +21,11 @@ const Hero = () => {
 
         {/* resim */}
         <div className="flex justify-center items-center">
-          <img src={banner} alt="dünya mikroplardan korkuyor" className="w-75 md:h-62.5 drop-shadow-2xl" />
+          <img
+            src={banner}
+            alt="dünya mikroplardan korkuyor"
+            className="w-75 md:h-62.5 drop-shadow-2xl animate-slide-up"
+          />
         </div>
       </div>
     </div>

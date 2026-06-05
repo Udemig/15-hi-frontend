@@ -34,3 +34,20 @@ export const mapStyles = {
     outline: "none",
   },
 };
+
+export const mockDetailData = {
+  fatality_rate: 0.0127,
+  confirmed: 160433,
+  active: 158390,
+  deaths: 2043,
+  country: "Brazil",
+  continent: "Americas",
+  population: 213421037,
+  capital: "Brasília",
+  flag: {
+    png: "https://flagcdn.com/w320/br.png",
+    svg: "https://flagcdn.com/br.svg",
+    alt: "The flag of Brazil has a green field with a large yellow rhombus in the center. Within the rhombus is a dark blue globe with twenty-seven small five-pointed white stars depicting a starry sky and a thin white convex horizontal band inscribed with the national motto 'Ordem e Progresso' across its center.",
+  },
+  currency: "Brazilian real",
+};

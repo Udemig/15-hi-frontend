@@ -1,0 +1,287 @@
+/* ---------- Tasarım belirteçleri (design tokens) ---------- */
+:root {
+  --bg-start: #1e3a8a;
+  --bg-end: #0f172a;
+  --card-bg: rgba(255, 255, 255, 0.1);
+  --card-border: rgba(255, 255, 255, 0.18);
+  --text: #f8fafc;
+  --text-muted: rgba(248, 250, 252, 0.65);
+  --accent: #38bdf8;
+  --accent-strong: #0ea5e9;
+  --error: #fca5a5;
+  --radius: 24px;
+  --radius-sm: 14px;
+  --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  --transition: 0.25s ease;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  color: var(--text);
+  background: linear-gradient(160deg, var(--bg-start), var(--bg-end));
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Kart ---------- */
+.app {
+  width: 100%;
+  max-width: 440px;
+}
+
+.weather-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* ---------- Arama ---------- */
+.search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  padding: 6px 6px 6px 14px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.search:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.15);
+}
+
+.search__icon {
+  display: flex;
+  color: var(--text-muted);
+}
+
+.search__input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-size: 1rem;
+  padding: 10px 0;
+}
+
+.search__input::placeholder {
+  color: var(--text-muted);
+}
+
+.search__btn {
+  border: none;
+  cursor: pointer;
+  background: var(--accent-strong);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 10px 18px;
+  border-radius: 10px;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.search__btn:hover {
+  background: var(--accent);
+}
+
+.search__btn:active {
+  transform: scale(0.96);
+}
+
+/* ---------- Hata ---------- */
+.error {
+  margin-top: 16px;
+  color: var(--error);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.error[hidden] {
+  display: none;
+}
+
+/* ---------- Mevcut hava durumu ---------- */
+.current {
+  margin-top: 28px;
+}
+
+.current__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.current__city {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.current__date {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.current__icon {
+  font-size: 3.4rem;
+  line-height: 1;
+}
+
+.current__temp {
+  display: flex;
+  align-items: flex-start;
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-top: 18px;
+}
+
+.current__temp .deg {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-top: 6px;
+  color: var(--text-muted);
+}
+
+.current__desc {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-top: 6px;
+  text-transform: capitalize;
+}
+
+/* ---------- Detaylar ---------- */
+.details {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.detail {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.detail__icon {
+  font-size: 1.4rem;
+}
+
+.detail__label {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+.detail__value {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* ---------- Hızlı seçim çipleri ---------- */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.chip {
+  border: 1px solid var(--card-border);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  font-size: 0.85rem;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.chip:hover,
+.chip[aria-pressed="true"] {
+  background: rgba(56, 189, 248, 0.18);
+  border-color: var(--accent);
+}
+
+/* ---------- Yükleniyor animasyonu ---------- */
+.current.is-loading,
+.details.is-loading {
+  opacity: 0.4;
+  filter: blur(1px);
+  transition: opacity var(--transition);
+}
+
+/* ---------- Giriş animasyonu ---------- */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.weather-card {
+  animation: fade-in 0.5s ease both;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 420px) {
+  .weather-card {
+    padding: 22px;
+  }
+
+  .current__temp {
+    font-size: 4rem;
+  }
+
+  .current__icon {
+    font-size: 2.8rem;
+  }
+
+  .detail__label {
+    font-size: 0.7rem;
+  }
+}
+
+/* ---------- Erişilebilirlik: hareket azaltma ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

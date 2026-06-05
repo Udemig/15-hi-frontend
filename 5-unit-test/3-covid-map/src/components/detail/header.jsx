@@ -6,6 +6,8 @@ import HeaderLoader from "../loader/header-loader";
 const Header = () => {
   const { isLoading, data } = useSelector((store) => store);
 
+  console.log(data);
+
   return (
     <div className="flex justify-between items-center">
       <Link
