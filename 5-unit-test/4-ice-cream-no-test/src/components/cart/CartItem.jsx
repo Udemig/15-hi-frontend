@@ -20,7 +20,7 @@ const CartItem = ({ item }) => {
       <img src={image} alt={name} className="w-16 h-16 rounded-md object-cover bg-surface-container shrink-0" />
 
       {/* Details */}
-      <div className="flex-grow min-w-0">
+      <div className="grow min-w-0">
         <div className="flex items-start justify-between gap-2">
           <h3 className="font-headline-md text-on-surface text-base leading-tight truncate">{name}</h3>
           <button
