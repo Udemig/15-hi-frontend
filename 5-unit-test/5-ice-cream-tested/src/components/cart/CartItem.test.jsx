@@ -33,8 +33,44 @@ describe("CartItem", () => {
     expect(store.getState().cart.items.length).toBe(1);
   });
 
-  // TODO
-  test("arttır butonuna tıklanınca ürün miktarı artar", () => {});
+  test("arttır butonuna tıklanınca ürün miktarı artar", async () => {
+    // bileşeni renderla
+    const user = userEvent.setup();
+    const { store } = renderWithStore(<CartItem item={ITEM} />, { preloadedState: storeState(ITEMS) });
 
-  test("azalt butonuna tıklanınca ürün miktarı azalır", () => {});
+    // store'daki ürünün miktarı 2'dir
+    expect(store.getState().cart.items[0].quantity).toBe(2);
+
+    // + butona tıkla
+    const btn = screen.getByRole("button", { name: /ADET artır/i });
+    await user.click(btn);
+
+    // store'daki ürünün miktarı artmıştır
+    expect(store.getState().cart.items[0].quantity).toBe(3);
+  });
+
+  test("azalt butonuna tıklanınca ürün miktarı azalır", async () => {
+    // bileşeni renderla
+    const user = userEvent.setup();
+    const { store } = renderWithStore(<CartItem item={ITEM} />, { preloadedState: storeState(ITEMS) });
+
+    // - butonuna al
+    const button = screen.getByRole("button", { name: /adet azalt/i });
+
+    // store'daki miktar 2 mi ve buton aktif mi
+    expect(store.getState().cart.items[0].quantity).toBe(2);
+
+    // butona tıkla
+    await user.click(button);
+
+    // store'daki miktar 1 mi ve buton inaktif mi
+    expect(store.getState().cart.items[0].quantity).toBe(1);
+  });
+
+  test("miktar 1 ise azalt butonu inaktif olur", () => {
+    renderWithStore(<CartItem item={{ ...ITEM, quantity: 1 }} />);
+
+    const button = screen.getByRole("button", { name: /adet azalt/i });
+    expect(button).toBeDisabled();
+  });
 });
