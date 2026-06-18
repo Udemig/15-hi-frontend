@@ -45,10 +45,10 @@ console.log(new Daire("Daire", "pembe", 89));
 // Örnek
 // Parent Clas
 class Arac {
-  marka: string;
-  model: string;
-
-  constructor(marka: string, model: string) {
+  constructor(
+    public marka: string,
+    public model: string,
+  ) {
     this.marka = marka;
     this.model = model;
   }
