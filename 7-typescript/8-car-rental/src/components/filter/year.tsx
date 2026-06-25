@@ -20,6 +20,7 @@ const Year: FC = () => {
       searchParams.delete("year");
     }
 
+    searchParams.set("page", "1");
     setSearchParams(searchParams);
   };
 

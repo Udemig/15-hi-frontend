@@ -32,14 +32,12 @@ const Searchbar: FC = () => {
       searchParams.delete("model");
     }
 
+    searchParams.set("page", "1");
     setSearchParams(searchParams);
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="searchbar flex gap-4 items-start justify-center"
-    >
+    <form onSubmit={handleSubmit} className="searchbar flex gap-4 items-start justify-center">
       {/* Marka */}
       <div className="searchbar-item items-end">
         <div className="w-full flex flex-col z-2">
@@ -50,7 +48,7 @@ const Searchbar: FC = () => {
             styles={SELECT_STYLES}
             options={arr}
             value={make ? { label: make, value: make } : undefined}
-            onChange={(e) => setMake(e.value)}
+            onChange={(e) => setMake(e?.value)}
           />
         </div>
 
@@ -66,18 +64,9 @@ const Searchbar: FC = () => {
 
           <div className="w-full flex items-center">
             <div className="relative flex-1">
-              <img
-                src="/model-icon.png"
-                className="size-6 absolute left-6 top-1/2 -translate-y-1/2 z-1"
-              />
+              <img src="/model-icon.png" className="size-6 absolute left-6 top-1/2 -translate-y-1/2 z-1" />
 
-              <input
-                type="text"
-                placeholder="Model..."
-                className="searchbar-input pt-4"
-                value={model}
-                onChange={(e) => setModel(e.target.value)}
-              />
+              <input type="text" placeholder="Model..." className="searchbar-input pt-4" value={model} onChange={(e) => setModel(e.target.value)} />
             </div>
           </div>
         </div>
