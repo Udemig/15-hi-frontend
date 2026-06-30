@@ -2,7 +2,6 @@ import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import type { Note, NoteValues } from "../types";
 import { v4 } from "uuid";
 
-
 const initialState: { notes: Note[] } = { notes: [] };
 
 const noteSlice = createSlice({
@@ -20,9 +19,15 @@ const noteSlice = createSlice({
       state.notes.unshift(newNote);
     },
 
-    deleteNote: (state, action: PayloadAction<string>) => {},
+    deleteNote: (state, action: PayloadAction<string>) => {
+      const index = state.notes.findIndex((n) => n.id === action.payload);
+      state.notes.splice(index, 1);
+    },
 
-    updateNote: (state, action: PayloadAction<{ id: string; noteValue: NoteValues }>) => {},
+    updateNote: (state, action: PayloadAction<{ id: string; noteValue: NoteValues }>) => {
+      const index = state.notes.findIndex((n) => n.id === action.payload.id);
+      state.notes.splice(index, 1, { ...action.payload.noteValue, id: action.payload.id });
+    },
   },
 });
 

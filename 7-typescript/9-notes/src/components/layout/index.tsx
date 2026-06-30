@@ -1,8 +1,9 @@
 import { Outlet } from "react-router-dom";
 import Footer from "./footer";
 import Header from "./header";
+import type { FC } from "react";
 
-const Layout = () => {
+const Layout: FC = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
