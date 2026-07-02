@@ -1,15 +1,30 @@
-import type { FC } from "react";
+import type { ChangeEvent, FC } from "react";
 import { SORT_OPTIONS } from "../../utils/constants";
 import { useGetPlaces } from "../../service/hooks";
+import { useSearchParams } from "react-router-dom";
 
 const Filter: FC = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+
   // konaklama alanlarının verisini al
   const { data } = useGetPlaces();
 
   // konaklama alanlarının şehir isimlerinden bir dizi oluştur (benzersiz)
   const cities = [...new Set(data?.map((item) => item.location))];
 
-  // todo: filtrelemeyi yap
+  // inputa girilen değeri url'e arama parametresi olarak ekle
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+
+    searchParams.set(name, value);
+
+    setSearchParams(searchParams);
+  };
+
+  // url'deki parametreleri temizle
+  const handleClear = () => {
+    setSearchParams({});
+  };
 
   return (
     <form className="flex flex-col gap-5 lg:gap-8 lg:mt-15 lg:sticky lg:top-24 bg-white p-6 rounded-xl shadow-lg border border-zinc-100">
@@ -18,10 +33,10 @@ const Filter: FC = () => {
       <div className="field">
         <label className="font-semibold text-zinc-700 text-sm">Nereye gitmek istiyorsunuz?</label>
 
-        <select name="location" className="input">
+        <select name="location" className="input" onChange={handleChange}>
           <option>Seçiniz</option>
           {cities.map((city) => (
-            <option key={city} value={city}>
+            <option key={city} value={city} selected={city === searchParams.get("location")}>
               {city}
             </option>
           ))}
@@ -31,13 +46,20 @@ const Filter: FC = () => {
       <div className="field">
         <label className="font-semibold text-zinc-700 text-sm">Konaklama noktası adı?</label>
 
-        <input type="text" className="input" placeholder="örn: Seaside Villa" name="title" />
+        <input
+          type="text"
+          className="input"
+          placeholder="örn: Seaside Villa"
+          name="title"
+          onChange={handleChange}
+          defaultValue={searchParams.get("title") || ""}
+        />
       </div>
 
       <div className="field">
         <label className="font-semibold text-zinc-700 text-sm">Sıralama Ölçütü</label>
 
-        <select name="order" className="input">
+        <select name="order" className="input" onChange={handleChange} defaultValue={searchParams.get("order") || ""}>
           <option>Seçiniz</option>
           {SORT_OPTIONS.map((item, key) => (
             <option key={key} value={item.value}>
@@ -47,7 +69,7 @@ const Filter: FC = () => {
         </select>
       </div>
 
-      <button type="reset" className="btn-primary">
+      <button type="reset" className="btn-primary" onClick={handleClear}>
         Filtreleri Temizle
       </button>
     </form>

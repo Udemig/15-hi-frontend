@@ -16,3 +16,14 @@ export interface GetPlacesResponse {
   results: number;
   places: Place[];
 }
+
+export interface FilterParams {
+  location?: string;
+  title?: string;
+  order?: string;
+}
+
+export interface PlaceResponse {
+  message: string;
+  place: Place;
+}

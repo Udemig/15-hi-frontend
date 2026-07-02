@@ -3,9 +3,16 @@ import { useGetPlaces } from "../../service/hooks";
 import Loader from "../loader";
 import Error from "../error";
 import Card from "./card";
+import { useSearchParams } from "react-router-dom";
+import type { FilterParams } from "../../types";
 
 const List: FC = () => {
-  const { isLoading, error, data, refetch } = useGetPlaces();
+  // url'den arama parametrelerini al
+  const [searchParams] = useSearchParams();
+  const params: FilterParams = Object.fromEntries(searchParams.entries());
+
+  // api'dan konaklama alanı verilerini al
+  const { isLoading, error, data, refetch } = useGetPlaces(params);
 
   if (isLoading) return <Loader />;
 

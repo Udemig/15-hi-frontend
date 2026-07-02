@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useGetPlaces } from "../../service/hooks";
 
 const Header = () => {
+  const { data } = useGetPlaces();
+
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-zinc-200 shadow-sm">
       <div className="container flex justify-between items-center">
@@ -13,7 +16,7 @@ const Header = () => {
 
           <nav className="flex gap-6 items-center">
             <Link to="/" className="nav-link group">
-              Oteller (44)
+              Oteller ({data?.length})
               <span className="link-line" />
             </Link>
             <Link to="/" className="nav-link group max-md:hidden">
