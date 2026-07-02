@@ -1,6 +1,35 @@
-// TODO Tanstack ile tekrar yaz
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import { useGetUsers } from "./service";
+
 const UserListFirst = () => {
-  return <div>UserList</div>;
+  const { isLoading, error, data, refetch } = useGetUsers();
+
+  if (isLoading) return <h1>Yükleniyor...</h1>;
+
+  if (error)
+    return (
+      <div>
+        <h1>HATA!</h1>
+        <button onClick={refetch}>Tekrar Dene</button>
+      </div>
+    );
+
+  return (
+    <div>
+      {data.map((user) => (
+        <div>
+          <img src={user.image} />
+          <h1>
+            {user.firstName} {user.lastName}
+          </h1>
+          <p>{user.email}</p>
+          <br />
+          <hr />
+        </div>
+      ))}
+    </div>
+  );
 };
 
 export default UserListFirst;
