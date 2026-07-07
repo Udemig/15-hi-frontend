@@ -1,0 +1,42 @@
+export const notes = [
+  {
+    id: '1',
+    title: 'React Native Öğren',
+    preview: 'Expo kullanarak ilk React Native uygulamamı yapıyorum.',
+    content: 'Expo kullanarak ilk React Native uygulamamı yapıyorum. Bu projede Navigation, FlatList ve stil yönetimini öğreneceğim.',
+    date: '10 Ekim 2023',
+    isFavorite: true,
+  },
+  {
+    id: '2',
+    title: 'Alışveriş Listesi',
+    preview: 'Süt, Yumurta, Ekmek, Kahve...',
+    content: 'Süt, Yumurta, Ekmek, Kahve, Çay, Domates, Biber.',
+    date: '12 Ekim 2023',
+    isFavorite: false,
+  },
+  {
+    id: '3',
+    title: 'Hafta Sonu Planı',
+    preview: 'Cumartesi günü arkadaşlarla sinemaya gidilecek.',
+    content: 'Cumartesi günü arkadaşlarla sinemaya gidilecek. Sonrasında yemek yenecek.',
+    date: '15 Ekim 2023',
+    isFavorite: true,
+  },
+  {
+    id: '4',
+    title: 'Kitap Önerileri',
+    preview: '1984, Hayvan Çiftliği, Cesur Yeni Dünya...',
+    content: '1984, Hayvan Çiftliği, Cesur Yeni Dünya, Fahrenheit 451 okunacaklar listesinde.',
+    date: '18 Ekim 2023',
+    isFavorite: false,
+  },
+  {
+    id: '5',
+    title: 'Toplantı Notları',
+    preview: 'Yeni proje tasarımı hakkında tartışıldı.',
+    content: 'Yeni proje tasarımı hakkında tartışıldı. Renk paleti ve fontlar belirlendi. Gelecek hafta prototip sunulacak.',
+    date: '20 Ekim 2023',
+    isFavorite: false,
+  },
+];
