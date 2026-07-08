@@ -54,7 +54,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/admin/edit",
+        path: "/admin/edit/:id",
         element: (
           <Protected allowedRoles={["admin"]}>
             <Edit />

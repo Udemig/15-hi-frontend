@@ -37,4 +37,22 @@
   .submit-btn {
     @apply w-full flex justify-center rounded-md bg-indigo-600 px-3 py-1.5 font-semibold text-white hover:bg-indigo-500 shadow-sm;
   }
+
+  .header-item {
+    @apply px-6 py-2 hover:bg-zinc-500/30 transition cursor-pointer whitespace-nowrap w-full;
+  }
+
+  .welcome-text {
+    width: 100%;
+    line-height: 0.8;
+    font-size: clamp(40px, 15vw, 215px);
+  }
+
+  .footer-button {
+    @apply bg-black p-4 rounded-lg hover:brightness-75;
+  }
+
+  .row {
+    @apply px-6 py-3 text-gray-900 whitespace-nowrap;
+  }
 }
