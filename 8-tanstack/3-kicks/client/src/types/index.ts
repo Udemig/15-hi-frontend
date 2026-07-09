@@ -51,4 +51,5 @@ export interface ProductValues {
   color: string;
   gender: "men" | "women" | "unisex";
   price: number;
+  discount?: number;
 }

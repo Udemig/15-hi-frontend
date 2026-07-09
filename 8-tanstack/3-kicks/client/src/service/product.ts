@@ -1,6 +1,8 @@
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import type { Product, ProductValues, Response } from "../types";
 import api from "./api";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const productService = {
   getAll: () => api.get<Response<Product[]>>("/shoes"),
@@ -23,3 +25,41 @@ export const useGetOneProduct = (id: string) =>
     queryFn: () => productService.getOne(id),
     select: (res) => res.data.data,
   });
+
+export const useCreateProduct = () => {
+  const navigate = useNavigate();
+
+  return useMutation({
+    mutationFn: (data: ProductValues) => productService.create(data),
+    onSuccess: () => {
+      toast.success("Ürün oluşturuldu");
+      navigate("/admin/dashboard");
+    },
+  });
+};
+
+export const useUpdateProduct = () => {
+  const navigate = useNavigate();
+
+  return useMutation({
+    mutationFn: ({ id, data }: { id: string | undefined; data: ProductValues }) =>
+      productService.update(id!, data),
+    onSuccess: () => {
+      toast.success("Ürün güncellendi");
+      navigate("/admin/dashboard");
+    },
+  });
+};
+
+export const useDeleteProduct = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: (id: string) => productService.delete(id),
+    onSuccess: () => {
+      toast.warning("Ürün kaldırıldı");
+      // arayüzün güncellenmesi için products sorgusunun tekrar çalıştırılmalı
+      queryClient.invalidateQueries({ queryKey: ["products"] });
+    },
+  });
+};

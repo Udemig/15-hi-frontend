@@ -1,11 +1,12 @@
 import type { FC } from "react";
-import { useGetAllProducts } from "../../service/product";
+import { useDeleteProduct, useGetAllProducts } from "../../service/product";
 import Loader from "../../components/loader";
 import Error from "../../components/error";
 import { Link } from "react-router-dom";
 
 const Dashboard: FC = () => {
   const { isLoading, error, data, refetch } = useGetAllProducts();
+  const { isPending, mutate } = useDeleteProduct();
 
   if (isLoading) return <Loader />;
 
@@ -57,7 +58,13 @@ const Dashboard: FC = () => {
                   <Link to={`/admin/edit/${product.id}`} className="text-blue-600 hover:underline">
                     Düzenle
                   </Link>
-                  <button className="text-red-500 hover:underline md:ps-3">Sil</button>
+                  <button
+                    disabled={isPending}
+                    onClick={() => mutate(product.id)}
+                    className="text-red-500 hover:underline md:ps-3"
+                  >
+                    Sil
+                  </button>
                 </td>
               </tr>
             ))}
