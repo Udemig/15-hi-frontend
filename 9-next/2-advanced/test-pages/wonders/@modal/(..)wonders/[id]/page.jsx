@@ -18,6 +18,14 @@ const DetailModal = () => {
   const handleClose = () => {
     // 1 sayfa geriye yönlendirir
     router.back();
+    // 1 sayfa ileriye yönlendirir
+    router.forward();
+    // belirli sayfaya yönlendirir
+    router.push("/adres");
+    // belirli sayfaya yönlendirir (geçmiş olmasın)
+    router.replace("/adres");
+    // sayfayı yeniden renderşa
+    router.refresh();
   };
 
   return (

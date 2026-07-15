@@ -93,3 +93,94 @@
 - Sever component'lar daha iyi olduğu için projelerimizde olabildiğince çok server component kullanmaya çalışıcaz sadece zorunda kaldığımız durumlarda (kullanıcı etkileşimini izleyeceksek veya hook kullanıcaksak) client component kullanırız
 
 - Not: Next.js bizden olabildiğince çok server component kullanmamızı istediği için sayfa içerisinde kullanıcı etkileşimini takip ediceğimiz bir yer varsa bütün sayfayı client component'a çevirmek yerine o kısmı ayrı bir client component haline getirip sayfanın geri kalanını server component olarak tutmak daha mantıklıdır
+
+## İç İçe Kullanımı
+
+- `Aynı türden` iki component'ı iç içe kullanmakta bir problem yoktur
+
+- Bir `server component` içerisinde `client component` kullanmakta bir problem yoktur
+
+- Bir `client component` içerisinde `server component` kullanırsak, server component özelliklerini kaybeder ve client component'a dönüşür
+
+- Bir `client component` içerisinde `server component`'ı HOC yöntemiyle kullanırsak, server component özelliklerini kaybetmez
+
+# Data Fetching
+
+- Next.js api'dan alınan veriyi cache'de tutar ve aynı api isteğini tekrar atarsak api'a tekrar istek atmak yerine cache'de tutulan veriyi kullanır
+
+- Bu sayede:
+- - ilk istei atılan bütün isteklerde cevap beklemeye gerek kalmaz
+- - api'a gereksiz istek gitmez
+- - asenkron state'ler için context / redudx / tanstack gibi yöntemlere gerek kalmaz
+
+- Next.js varsayılan olarak bütün api isteklerini cache'ler ama bazen biz cache'lemesini önlemek isteyebiliriz. Bu durumda fetch methodunun ayarlarını buna göre yaparız.
+
+# Next.js Methods
+
+## useRouter
+
+- sadece `client` component'larda kullanılabilir
+- proje içerisinde yönlendirme yapmak için kullanılır
+- back() | forward() | replace() | push() | refresh()
+
+## redirect
+
+- sadece `server` component'larda kullanılabilir
+- proje içerisinde yönlendirme yapmak için kullanırlır
+- genelde yetkilendirme işlemlerinde kullanılır
+
+## notFound
+
+- hem `client` hem `server` component'larda kullanılabilir
+- ekrana 404 sayfasını basar
+
+## usePathname
+
+- sadece `client` component'larda kullanılabilir
+- url'den kullanıcının bulunduğu adresi getirir
+
+## useParams
+
+- sadece `client` component'larda kullanılabilir
+- url'deki parametrelere erişmemizi sağlar
+
+## useSearchParams
+
+- sadece `client` component'larda kullanılabilir
+- url'deki arama parametrelere erişmemizi sağlar
+
+# Form
+
+- Normal şartlarda formlarda bolca kullanıcı etkileşiöi izlememiz gerektiğinden formaları client component yaparız
+- Server action yöntemi kullanarak form içerisindeki veriye erişme ve form gönderilince fonksiyon çalıştırma işlemini server componentlarda yapabiliriz
+
+# Static Site Generation (SSG)
+
+- SSG, next.js'in build (derleme) sırasında sayfaları önceden html olarak üretip sunucuda saklamasıdır
+- Kullanıcı siteyi ziyaret ettiğinde sayfalar önceden hazırlandığını için çok hızlı bir şekilde kullanıcıya sunulur.
+
+### Statik Sayfa
+
+- Build anında html'i hazırlanıp sunucuda saklanır, kullanıcı sayfaya girdiğinde tekrar hazırlanmadan direkt kullanıcıya sunulur
+- Varsayılan olarak url parametresi olmayan bütün sayfalar statik sayfa olur
+
+### Dinamik Sayfa
+
+- Kullanıcı sayfaya girdiği anda html'i hazırlanıp sunulan sayfalardır
+- Varsayılan olarak url parametresi olan sayfalar dinamik sayfa olur
+
+### Statik Bir Sayfayı Dinamik Hale Getirme (revalidate | dynamic)
+
+- Next.js varsayılan olarak parametreye sahip olmayan bütün sayfaları statik yapar
+- Bazen biz statik sayfada gösterilen verilerin sıkça güncelleneceğinden ve kullanıcıya eski içerik sunmak istemediğimizden statik sayfaları dinamik sayfaya çevirmek isteriz
+- Bunun 2 yöntemi vardır:
+- revalidate: statik olan sayfanın belirli aralıklarla yeniden oluşturulmasını sağlar
+- dynamic: statik sayfayı tamamen dinamik yapar
+
+### Dinamik Bir Sayfayı Statik Hale Getirme (generateStaticParams)
+
+- generateStaticParams, dinamik bir sayfanın statik şekilde oluşturulmasını sağlar
+- build sırasında çağrılan dinamik route'lar için bir parametre listesi return ederz
+- - `generateStaticParams([{id:123},{id:234},{id:213}])`
+- - next.js bu parametre listesindeki her bir eleman için o sayfanın statik bir halini oluşturur
+- - Genelde içeriği çok değişmeyen ve sayısı az olan detay sayfalarında tercih ederiz

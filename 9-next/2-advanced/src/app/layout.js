@@ -5,6 +5,7 @@ import LocalFont from "next/font/local";
 
 // remote font
 import { Oswald } from "next/font/google";
+import Header from "@/components/Header";
 
 // remote font kurulum
 const oswald = Oswald({
@@ -27,7 +28,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`h-full antialiased ${oswald.variable} ${singsong.variable}`}>
-      <body className={`min-h-full flex flex-col`}>{children}</body>
+      <body className={`min-h-full flex flex-col`}>
+        <Header />
+
+        <main>{children}</main>
+      </body>
     </html>
   );
 }

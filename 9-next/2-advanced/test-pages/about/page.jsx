@@ -6,9 +6,9 @@ const About = () => {
     <div className="page">
       <h1>About</h1>
 
-      <ServerComponent />
-
-      <ClientComponent />
+      <ClientComponent>
+        <ServerComponent />
+      </ClientComponent>
 
       {/* TODO: Server Client iç içe kullanım */}
     </div>
