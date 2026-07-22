@@ -1,0 +1,15 @@
+{
+  "Header": {
+    "orders": "Orders",
+    "cart": "Cart",
+    "search": "Search for a product or category..."
+  },
+  "Hero": {
+    "title-1": "Organic Products at Affordable Prices",
+    "desc-1": "Healthy eating is now easier than ever with natural and organic products",
+    "button-1": "Organic Products",
+    "title-2": "Natural and Organic Products",
+    "desc-2": "The freshest fruits and vegetables are at your fingertips. Your journey to a healthier lifestyle starts here",
+    "button-2": "Start Shopping"
+  }
+}

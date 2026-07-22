@@ -23,6 +23,14 @@ body {
   a {
     @apply cursor-pointer hover:brightness-95 transition duration-200 disabled:cursor-not-allowed disabled:opacity-50;
   }
+
+  th {
+    @apply py-3.5 px-5 whitespace-nowrap font-semibold text-xs uppercase tracking-wider text-zinc-500;
+  }
+
+  td {
+    @apply p-4 text-center border-b border-zinc-100 text-sm text-zinc-700;
+  }
 }
 
 @layer components {

@@ -1,0 +1,15 @@
+{
+  "Header": {
+    "orders": "Bestellungen",
+    "cart": "Warenkorb",
+    "search": "Nach einem Produkt oder einer Kategorie suchen..."
+  },
+  "Hero": {
+    "title-1": "Bio-Produkte zu günstigen Preisen",
+    "desc-1": "Gesunde Ernährung ist mit natürlichen und biologischen Produkten jetzt ganz einfach",
+    "button-1": "Bio-Produkte",
+    "title-2": "Natürliche und biologische Produkte",
+    "desc-2": "Die frischesten Obst- und Gemüsesorten sind nur einen Klick entfernt. Der erste Schritt zu einem gesunden Leben beginnt bei Ihnen",
+    "button-2": "Jetzt einkaufen"
+  }
+}

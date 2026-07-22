@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FC } from "react";
 import Field from "./Field";
 import { handleProductForm } from "@/utils/action";
+import ImagePreview from "./ImagePreview";
 
 const ProductForm: FC = () => {
   return (
@@ -40,7 +41,7 @@ const ProductForm: FC = () => {
             <input id="image_url" type="text" name="image_url" className="input" />
           </Field>
 
-          {/* TODO: ÖNİZLEME */}
+          <ImagePreview />
 
           <Field htmlFor="description" label="Açıklama">
             <textarea

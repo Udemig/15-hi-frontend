@@ -1,0 +1,16 @@
+{
+  "Header": {
+    "orders": "Sipariş",
+    "cart": "Sepet",
+    "search": "Ürün veya kategori ara.."
+  },
+
+  "Hero": {
+    "title-1": "Organik Ürünler Uygun Fiyata",
+    "desc-1": "Doğal ve organik ürünlerle sağlıklı beslenme artık çok kolay",
+    "button-1": "Organik Ürünler",
+    "title-2": "Doğal ve Organik Ürünler",
+    "desc-2": "En taze meyve ve sebzeler elinizin altında. Sağlıklı yaşamın ilk adımı sizden başlıyor",
+    "button-2": "Alışverişe Başla"
+  }
+}

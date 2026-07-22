@@ -17,7 +17,7 @@ const ProductCard: FC<Props> = ({ product }) => {
         : "bg-red-50 text-red-700 ring-red-600/20";
 
   return (
-    <div>
+    <div className="group card hover:shadow-lg transition duration-300 overflow-hidden hover:-translate-y-1">
       {/* Üst Kısım */}
       <div className="h-56 relative overflow-hidden">
         <Image
@@ -40,9 +40,7 @@ const ProductCard: FC<Props> = ({ product }) => {
       {/* Alt Kısım */}
       <div className="p-5">
         <div className="mb-3">
-          <p className="text-text-zinc-500 font-medium uppercase tracking-wider mb-1">
-            {product.brand}
-          </p>
+          <p className="text-zinc-500 font-medium uppercase tracking-wider mb-1">{product.brand}</p>
           <h3 className="font-bold text-lg text-zinc-900 line-clamp-1 group-hover:text-blue-600 transition duration-300">
             {product.name}
           </h3>

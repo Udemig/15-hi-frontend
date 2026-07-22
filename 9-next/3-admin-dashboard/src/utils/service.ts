@@ -1,4 +1,4 @@
-import { Order, Product } from "@/types";
+import { Order, Product, User } from "@/types";
 
 // api url
 const BASE_URL = "http://localhost:4000";
@@ -24,6 +24,27 @@ export const createProduct = async (productData: Omit<Product, "id">): Promise<v
     body: JSON.stringify(productData),
     headers: { "Content-Type": "application/json" },
   });
+
+  return res.json();
+};
+
+// kullanıcıları getir
+export const getUsers = async (): Promise<User[]> => {
+  const res = await fetch(`${BASE_URL}/users`);
+
+  return res.json();
+};
+
+// kullanıcıyı banla
+export const deleteUser = async (id: string): Promise<void> => {
+  const res = await fetch(`${BASE_URL}/users/${id}`, { method: "DELETE" });
+
+  return res.json();
+};
+
+// kullanıcıyı al
+export const getUser = async (id: string): Promise<User> => {
+  const res = await fetch(`${BASE_URL}/users/${id}`);
 
   return res.json();
 };

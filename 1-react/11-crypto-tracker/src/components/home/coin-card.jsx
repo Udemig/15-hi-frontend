@@ -16,7 +16,13 @@ const CoinCard = ({ coin }) => {
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-3">
           <div className="relative">
-            <img src={coin.image} alt={coin.symbol} width={48} height={48} className="size-12 rounded-full" />
+            <img
+              src={coin.image}
+              alt={coin.symbol}
+              width={48}
+              height={48}
+              className="size-12 rounded-full"
+            />
             <span className="absolute -top-2 -right-2 bg-blue-700 size-6 text-xs flex items-center justify-center font-bold rounded-full text-white">
               {coin.market_cap_rank}
             </span>
@@ -24,7 +30,9 @@ const CoinCard = ({ coin }) => {
 
           <div>
             <h1 className="font-bold text-lg text-gray-900 dark:text-white">{coin.symbol}</h1>
-            <p className="text-sm text-gray-600 dark:text-gray-400 max-w-40 truncate">{coin.name}</p>
+            <p className="text-sm text-gray-600 dark:text-gray-400 max-w-40 truncate">
+              {coin.name}
+            </p>
           </div>
         </div>
       </div>
