@@ -12,5 +12,64 @@
     "title-2": "Doğal ve Organik Ürünler",
     "desc-2": "En taze meyve ve sebzeler elinizin altında. Sağlıklı yaşamın ilk adımı sizden başlıyor",
     "button-2": "Alışverişe Başla"
+  },
+
+  "LocaleSwitcher": {
+    "tr": "Türkçe",
+    "en": "İngilizce",
+    "de": "Almanca"
+  },
+
+  "Footer": {
+    "rights": "Manav Market © {year} Tüm Hakları Saklıdır"
+  },
+
+  "Features": {
+    "delivery-title": "Hızlı Teslimat",
+    "delivery-description": "Aynı gün hızlı teslimat",
+    "organic-title": "Taze Ürünler",
+    "organic-description": "Günlük taze ürünler",
+    "price-title": "Uygun Fiyatlar",
+    "price-description": "En uygun fiyatlar",
+    "security-title": "Güvenli Alışveriş",
+    "security-description": "Yüksek standartlarda güvenli alışveriş"
+  },
+
+  "Product": {
+    "organic": "Organik",
+    "back-home": "Ana Sayfaya Dön",
+    "product-info": "Ürün Bilgileri",
+    "category": "Kategori",
+    "origin": "Menşei",
+    "freshness": "Tazelik",
+    "unit": "Birim",
+    "stock": "Stok",
+    "yes": "Evet",
+    "no": "Hayır",
+    "day": "gün",
+    "tax": "KDV Dahil",
+    "delivery": "Aynı gün teslimat imkanı",
+    "status": "Stok durumu",
+    "values": "Beslenme Değerleri",
+    "add": "Sepete Ekle",
+    "buy": "Hemen Satın Al",
+    "added": "{quantity} {unit} {name} sepete eklendi",
+    "min-order": "Minimum sipariş tutarı 50₺'dir"
+  },
+
+  "Cart": {
+    "added": "Ürün sepete eklendi",
+    "action-failed": "İşlem başarısız oldu",
+    "error": "Bir hata oluştu"
+  },
+
+  "Category": {
+    "meyveler": "Meyveler",
+    "sebzeler": "Sebzeler",
+    "sut-urunleri": "Süt Ürünleri",
+    "et-urunleri": "Et Ürünleri",
+    "firindan": "Fırından",
+    "icecekler": "İçecekler",
+    "bakliyat": "Bakliyat"
   }
 }

@@ -37,4 +37,12 @@ body {
   .header-link {
     @apply text-lg relative text-gray-700 hover:text-green-600 transition flex items-center gap-2;
   }
+
+  .counter-button {
+    @apply p-3 text-gray-600 hover:bg-gray-100 overflow-hidden disabled:bg-zinc-200/10;
+  }
+
+  .order-button {
+    @apply flex-1 flex items-center justify-center gap-2 text-green-600 border border-green-600 px-4 py-2 rounded-md hover:bg-green-100;
+  }
 }

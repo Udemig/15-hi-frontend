@@ -2,14 +2,41 @@
   "Header": {
     "orders": "Bestellungen",
     "cart": "Warenkorb",
-    "search": "Nach einem Produkt oder einer Kategorie suchen..."
+    "search": "Produkt oder Kategorie suchen..."
   },
   "Hero": {
     "title-1": "Bio-Produkte zu günstigen Preisen",
-    "desc-1": "Gesunde Ernährung ist mit natürlichen und biologischen Produkten jetzt ganz einfach",
+    "desc-1": "Gesunde Ernährung mit natürlichen und biologischen Produkten ist jetzt ganz einfach",
     "button-1": "Bio-Produkte",
     "title-2": "Natürliche und biologische Produkte",
-    "desc-2": "Die frischesten Obst- und Gemüsesorten sind nur einen Klick entfernt. Der erste Schritt zu einem gesunden Leben beginnt bei Ihnen",
+    "desc-2": "Das frischeste Obst und Gemüse ist nur einen Klick entfernt. Der erste Schritt zu einem gesunden Leben beginnt bei Ihnen",
     "button-2": "Jetzt einkaufen"
+  },
+  "LocaleSwitcher": { "tr": "Türkisch", "en": "Englisch", "de": "Deutsch" },
+  "Footer": { "rights": "Manav Market © {year} Alle Rechte vorbehalten" },
+  "Features": {
+    "delivery-title": "Schnelle Lieferung",
+    "delivery-description": "Schnelle Lieferung am selben Tag",
+    "organic-title": "Frische Produkte",
+    "organic-description": "Täglich frische Produkte",
+    "price-title": "Günstige Preise",
+    "price-description": "Die besten Preise",
+    "security-title": "Sicheres Einkaufen",
+    "security-description": "Sicheres Einkaufen nach hohen Sicherheitsstandards"
+  },
+  "Product": { "organic": "Bio" },
+  "Cart": {
+    "added": "Produkt wurde zum Warenkorb hinzugefügt",
+    "action-failed": "Aktion fehlgeschlagen",
+    "error": "Ein Fehler ist aufgetreten"
+  },
+  "Category": {
+    "meyveler": "Obst",
+    "sebzeler": "Gemüse",
+    "sut-urunleri": "Milchprodukte",
+    "et-urunleri": "Fleischprodukte",
+    "firindan": "Backwaren",
+    "icecekler": "Getränke",
+    "bakliyat": "Hülsenfrüchte"
   }
 }

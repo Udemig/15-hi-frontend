@@ -3,7 +3,7 @@
 - **Frontend**
 - react-icons
 - react-toastify
-- i18n
+- next-intl
 - next
 - tailwindcss
 

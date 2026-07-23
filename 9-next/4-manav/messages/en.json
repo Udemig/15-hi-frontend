@@ -4,12 +4,54 @@
     "cart": "Cart",
     "search": "Search for a product or category..."
   },
+
   "Hero": {
     "title-1": "Organic Products at Affordable Prices",
     "desc-1": "Healthy eating is now easier than ever with natural and organic products",
     "button-1": "Organic Products",
     "title-2": "Natural and Organic Products",
-    "desc-2": "The freshest fruits and vegetables are at your fingertips. Your journey to a healthier lifestyle starts here",
+    "desc-2": "The freshest fruits and vegetables are at your fingertips. Your first step toward a healthy lifestyle starts here",
     "button-2": "Start Shopping"
+  },
+
+  "LocaleSwitcher": {
+    "tr": "Turkish",
+    "en": "English",
+    "de": "German"
+  },
+
+  "Footer": {
+    "rights": "Manav Market © {year} All Rights Reserved"
+  },
+
+  "Features": {
+    "delivery-title": "Fast Delivery",
+    "delivery-description": "Fast same-day delivery",
+    "organic-title": "Fresh Products",
+    "organic-description": "Fresh products delivered daily",
+    "price-title": "Affordable Prices",
+    "price-description": "The best prices",
+    "security-title": "Secure Shopping",
+    "security-description": "Secure shopping with high safety standards"
+  },
+
+  "Product": {
+    "organic": "Organic"
+  },
+
+  "Cart": {
+    "added": "Product added to cart",
+    "action-failed": "Action failed",
+    "error": "An error occurred"
+  },
+
+  "Category": {
+    "meyveler": "Fruits",
+    "sebzeler": "Vegetables",
+    "sut-urunleri": "Dairy Products",
+    "et-urunleri": "Meat Products",
+    "firindan": "Bakery",
+    "icecekler": "Beverages",
+    "bakliyat": "Legumes"
   }
 }

@@ -1,9 +1,12 @@
+import { getTranslations } from "next-intl/server";
 import { FC } from "react";
 
-const Footer: FC = () => {
+const Footer: FC = async () => {
+  const t = await getTranslations("Footer");
+
   return (
     <footer className="bg-green-900 text-white p-5 text-center">
-      Manav Market © {new Date().getFullYear()} Tüm Hakları Saklıdır
+      {t("rights", { year: new Date().getFullYear() })}
     </footer>
   );
 };
