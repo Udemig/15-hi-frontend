@@ -70,7 +70,9 @@ async function handleSingleItemCheckout(data: any) {
   const stripeProducts = await getActiveProducts();
 
   // Satın alınacak ürün katalogda var mı kontrol et
-  let foundProduct = stripeProducts.find((product: any) => product.metadata.product_id === String(grocery));
+  let foundProduct = stripeProducts.find(
+    (product: any) => product.metadata.product_id === String(grocery),
+  );
 
   // Eğer katalogda yoksa ürünü kataloga ekle
   if (!foundProduct) {
@@ -143,8 +145,6 @@ async function handleCartCheckout(data: any) {
 
   // Kullanıcının sepetini bul
   const cart = await Cart.findOne({ userId }).populate("items.grocery");
-
-  console.log("cart", cart);
 
   if (!cart || cart.items.length === 0) {
     return NextResponse.json({ message: "Sepet boş veya bulunamadı" }, { status: 404 });
@@ -226,7 +226,10 @@ async function handleCartCheckout(data: any) {
     name: item.name,
   }));
 
-  const totalAmount = cart.items.reduce((sum: number, item: any) => sum + item.price * item.quantity, 0);
+  const totalAmount = cart.items.reduce(
+    (sum: number, item: any) => sum + item.price * item.quantity,
+    0,
+  );
 
   const order = {
     items: orderItems,

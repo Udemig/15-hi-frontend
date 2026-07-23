@@ -4,7 +4,6 @@
     "cart": "Sepet",
     "search": "Ürün veya kategori ara.."
   },
-
   "Hero": {
     "title-1": "Organik Ürünler Uygun Fiyata",
     "desc-1": "Doğal ve organik ürünlerle sağlıklı beslenme artık çok kolay",
@@ -13,17 +12,14 @@
     "desc-2": "En taze meyve ve sebzeler elinizin altında. Sağlıklı yaşamın ilk adımı sizden başlıyor",
     "button-2": "Alışverişe Başla"
   },
-
   "LocaleSwitcher": {
     "tr": "Türkçe",
     "en": "İngilizce",
     "de": "Almanca"
   },
-
   "Footer": {
     "rights": "Manav Market © {year} Tüm Hakları Saklıdır"
   },
-
   "Features": {
     "delivery-title": "Hızlı Teslimat",
     "delivery-description": "Aynı gün hızlı teslimat",
@@ -34,7 +30,6 @@
     "security-title": "Güvenli Alışveriş",
     "security-description": "Yüksek standartlarda güvenli alışveriş"
   },
-
   "Product": {
     "organic": "Organik",
     "back-home": "Ana Sayfaya Dön",
@@ -56,13 +51,24 @@
     "added": "{quantity} {unit} {name} sepete eklendi",
     "min-order": "Minimum sipariş tutarı 50₺'dir"
   },
-
   "Cart": {
     "added": "Ürün sepete eklendi",
     "action-failed": "İşlem başarısız oldu",
-    "error": "Bir hata oluştu"
+    "error": "Bir hata oluştu",
+    "title": "Alışveriş Sepeti",
+    "empty-title": "Henüz sepete ürün eklemediniz",
+    "browse": "Ürünlere Göz Atın",
+    "your-cart": "Sepetiniz",
+    "clear": "Temizle",
+    "cleared": "Sepet temizlendi",
+    "summary": "Sipariş Özeti",
+    "products-total": "Ürünler Toplamı",
+    "shipping": "Kargo",
+    "total": "Toplam",
+    "free": "Bedava",
+    "continue-shopping": "Alışverişe Devam Et",
+    "checkout": "Ödeme Yap"
   },
-
   "Category": {
     "meyveler": "Meyveler",
     "sebzeler": "Sebzeler",
@@ -71,5 +77,30 @@
     "firindan": "Fırından",
     "icecekler": "İçecekler",
     "bakliyat": "Bakliyat"
+  },
+  "Success": {
+    "title": "Ödeme Başarılı Oldu",
+    "my-orders": "Siparişlerim",
+    "home": "Anasayfa",
+    "total-price": "Toplam Fiyat"
+  },
+  "Cancel": {
+    "title": "Ödeme Başarısız Oldu",
+    "desc": "Ödeme işlemi gerçekleştirilirken bir sorun oluştu",
+    "retry-later": "Lütfen daha sonra tekrar deneyiniz",
+    "home": "Anasayfa"
+  },
+  "Orders": {
+    "title": "Siparişlerim",
+    "not-found": "Sipariş Bulunamadı",
+    "back-home": "Ana Sayfaya Dön",
+    "total": "Toplam",
+    "customer": "Müşteri",
+    "delivery-address": "Teslimat Adresi",
+    "store-pickup": "Mağazadan Alım"
+  },
+  "NotFound": {
+    "message": "Aradığınız içerik bulunamadı",
+    "home": "Anasayfa'ya Dön"
   }
 }

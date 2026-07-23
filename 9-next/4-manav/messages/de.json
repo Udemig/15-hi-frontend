@@ -2,14 +2,14 @@
   "Header": {
     "orders": "Bestellungen",
     "cart": "Warenkorb",
-    "search": "Produkt oder Kategorie suchen..."
+    "search": "Nach Produkten oder Kategorien suchen..."
   },
   "Hero": {
     "title-1": "Bio-Produkte zu günstigen Preisen",
     "desc-1": "Gesunde Ernährung mit natürlichen und biologischen Produkten ist jetzt ganz einfach",
     "button-1": "Bio-Produkte",
     "title-2": "Natürliche und biologische Produkte",
-    "desc-2": "Das frischeste Obst und Gemüse ist nur einen Klick entfernt. Der erste Schritt zu einem gesunden Leben beginnt bei Ihnen",
+    "desc-2": "Das frischeste Obst und Gemüse ist nur einen Klick entfernt. Machen Sie den ersten Schritt zu einem gesunden Lebensstil",
     "button-2": "Jetzt einkaufen"
   },
   "LocaleSwitcher": { "tr": "Türkisch", "en": "Englisch", "de": "Deutsch" },
@@ -24,11 +24,44 @@
     "security-title": "Sicheres Einkaufen",
     "security-description": "Sicheres Einkaufen nach hohen Sicherheitsstandards"
   },
-  "Product": { "organic": "Bio" },
+  "Product": {
+    "organic": "Bio",
+    "back-home": "Zurück zur Startseite",
+    "product-info": "Produktinformationen",
+    "category": "Kategorie",
+    "origin": "Herkunft",
+    "freshness": "Frische",
+    "unit": "Einheit",
+    "stock": "Lagerbestand",
+    "yes": "Ja",
+    "no": "Nein",
+    "day": "Tag",
+    "tax": "Inkl. MwSt.",
+    "delivery": "Lieferung am selben Tag verfügbar",
+    "status": "Lagerstatus",
+    "values": "Nährwerte",
+    "add": "In den Warenkorb",
+    "buy": "Jetzt kaufen",
+    "added": "{quantity} {unit} {name} wurde dem Warenkorb hinzugefügt",
+    "min-order": "Der Mindestbestellwert beträgt 50 ₺"
+  },
   "Cart": {
-    "added": "Produkt wurde zum Warenkorb hinzugefügt",
-    "action-failed": "Aktion fehlgeschlagen",
-    "error": "Ein Fehler ist aufgetreten"
+    "added": "Produkt wurde dem Warenkorb hinzugefügt",
+    "action-failed": "Die Aktion ist fehlgeschlagen",
+    "error": "Ein Fehler ist aufgetreten",
+    "title": "Warenkorb",
+    "empty-title": "Sie haben noch keine Produkte in den Warenkorb gelegt",
+    "browse": "Produkte ansehen",
+    "your-cart": "Ihr Warenkorb",
+    "clear": "Warenkorb leeren",
+    "cleared": "Warenkorb wurde geleert",
+    "summary": "Bestellübersicht",
+    "products-total": "Zwischensumme",
+    "shipping": "Versand",
+    "total": "Gesamt",
+    "free": "Kostenlos",
+    "continue-shopping": "Weiter einkaufen",
+    "checkout": "Zur Kasse"
   },
   "Category": {
     "meyveler": "Obst",
@@ -38,5 +71,30 @@
     "firindan": "Backwaren",
     "icecekler": "Getränke",
     "bakliyat": "Hülsenfrüchte"
+  },
+  "Success": {
+    "title": "Zahlung erfolgreich",
+    "my-orders": "Meine Bestellungen",
+    "home": "Startseite",
+    "total-price": "Gesamtpreis"
+  },
+  "Cancel": {
+    "title": "Zahlung fehlgeschlagen",
+    "desc": "Bei der Verarbeitung Ihrer Zahlung ist ein Problem aufgetreten",
+    "retry-later": "Bitte versuchen Sie es später erneut",
+    "home": "Startseite"
+  },
+  "Orders": {
+    "title": "Meine Bestellungen",
+    "not-found": "Keine Bestellungen gefunden",
+    "back-home": "Zurück zur Startseite",
+    "total": "Gesamt",
+    "customer": "Kunde",
+    "delivery-address": "Lieferadresse",
+    "store-pickup": "Abholung im Geschäft"
+  },
+  "NotFound": {
+    "message": "Der gesuchte Inhalt wurde nicht gefunden",
+    "home": "Zurück zur Startseite"
   }
 }

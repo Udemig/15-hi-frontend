@@ -1,50 +1,64 @@
 {
-  "Header": {
-    "orders": "Orders",
-    "cart": "Cart",
-    "search": "Search for a product or category..."
-  },
-
+  "Header": { "orders": "Orders", "cart": "Cart", "search": "Search for a product or category..." },
   "Hero": {
     "title-1": "Organic Products at Affordable Prices",
     "desc-1": "Healthy eating is now easier than ever with natural and organic products",
     "button-1": "Organic Products",
     "title-2": "Natural and Organic Products",
-    "desc-2": "The freshest fruits and vegetables are at your fingertips. Your first step toward a healthy lifestyle starts here",
+    "desc-2": "The freshest fruits and vegetables are at your fingertips. Take the first step toward a healthy lifestyle",
     "button-2": "Start Shopping"
   },
-
-  "LocaleSwitcher": {
-    "tr": "Turkish",
-    "en": "English",
-    "de": "German"
-  },
-
-  "Footer": {
-    "rights": "Manav Market © {year} All Rights Reserved"
-  },
-
+  "LocaleSwitcher": { "tr": "Turkish", "en": "English", "de": "German" },
+  "Footer": { "rights": "Manav Market © {year} All Rights Reserved" },
   "Features": {
     "delivery-title": "Fast Delivery",
     "delivery-description": "Fast same-day delivery",
     "organic-title": "Fresh Products",
-    "organic-description": "Fresh products delivered daily",
+    "organic-description": "Fresh products every day",
     "price-title": "Affordable Prices",
     "price-description": "The best prices",
     "security-title": "Secure Shopping",
-    "security-description": "Secure shopping with high safety standards"
+    "security-description": "Secure shopping with high security standards"
   },
-
   "Product": {
-    "organic": "Organic"
+    "organic": "Organic",
+    "back-home": "Back to Home",
+    "product-info": "Product Information",
+    "category": "Category",
+    "origin": "Origin",
+    "freshness": "Freshness",
+    "unit": "Unit",
+    "stock": "Stock",
+    "yes": "Yes",
+    "no": "No",
+    "day": "day",
+    "tax": "VAT Included",
+    "delivery": "Same-day delivery available",
+    "status": "Stock Status",
+    "values": "Nutritional Values",
+    "add": "Add to Cart",
+    "buy": "Buy Now",
+    "added": "{quantity} {unit} of {name} has been added to your cart",
+    "min-order": "The minimum order amount is ₺50"
   },
-
   "Cart": {
     "added": "Product added to cart",
-    "action-failed": "Action failed",
-    "error": "An error occurred"
+    "action-failed": "The action failed",
+    "error": "An error occurred",
+    "title": "Shopping Cart",
+    "empty-title": "You haven't added any products to your cart yet",
+    "browse": "Browse Products",
+    "your-cart": "Your Cart",
+    "clear": "Clear Cart",
+    "cleared": "Cart cleared",
+    "summary": "Order Summary",
+    "products-total": "Products Subtotal",
+    "shipping": "Shipping",
+    "total": "Total",
+    "free": "Free",
+    "continue-shopping": "Continue Shopping",
+    "checkout": "Proceed to Checkout"
   },
-
   "Category": {
     "meyveler": "Fruits",
     "sebzeler": "Vegetables",
@@ -53,5 +67,30 @@
     "firindan": "Bakery",
     "icecekler": "Beverages",
     "bakliyat": "Legumes"
+  },
+  "Success": {
+    "title": "Payment Successful",
+    "my-orders": "My Orders",
+    "home": "Home",
+    "total-price": "Total Price"
+  },
+  "Cancel": {
+    "title": "Payment Failed",
+    "desc": "An issue occurred while processing your payment",
+    "retry-later": "Please try again later",
+    "home": "Home"
+  },
+  "Orders": {
+    "title": "My Orders",
+    "not-found": "No Orders Found",
+    "back-home": "Back to Home",
+    "total": "Total",
+    "customer": "Customer",
+    "delivery-address": "Delivery Address",
+    "store-pickup": "Store Pickup"
+  },
+  "NotFound": {
+    "message": "The content you are looking for could not be found",
+    "home": "Back to Home"
   }
 }
