@@ -28,7 +28,7 @@ const PriceChart = ({ symbol, priceHistory, days }) => {
       },
       title: {
         display: true,
-        text: `${symbol} Fiyat Geçmişi (${days} gün)`,
+        text: `Fiyat Geçmişi (${days} gün)`,
         color: textColor,
         font: {
           size: 16,
